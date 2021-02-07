@@ -1,0 +1,16 @@
+#!/usr/bin/awk -f
+#vim: ft=awk
+BEGIN {
+  getline < "/tmp/cpu-usage-cache"
+  close("/tmp/cpu-usage-cache")
+  prev_idle = $1
+  prev_total = $2
+  getline < "/proc/stat"
+  close("/proc/stat")
+  idle = $5
+  total = 0
+  for (i=2; i<=NF; i++)
+    total += $i
+  printf "%02d%%\n", (1-(idle-prev_idle)/(total-prev_total))*100
+  printf "%d %d", idle, total > "/tmp/cpu-usage-cache"
+}

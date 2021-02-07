@@ -1,0 +1,27 @@
+#!/bin/bash
+
+set -Euxo pipefail
+shopt -s lastpipe
+
+if [ -z "$1" ]; then
+  echo "error: missing 1 argument" >&2
+  exit 1
+fi
+
+function wait_file_event()
+{
+  inotifywait -q -e modify -e move_self -e delete_self "$1"
+}
+
+function setbg()
+{
+  pango-view --font=mono --background=gray --foreground=white -qo /tmp/background-text.png "$1"
+  feh --bg-center /tmp/background-text.png
+}
+
+setbg "$1"
+while wait_file_event "$1" | read event
+do
+  echo "$event"
+  setbg "$1"
+done
