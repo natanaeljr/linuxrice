@@ -1,0 +1,10 @@
+**/[Bb]uild/
+.vscode/
+.ccls-cache
+compile_commands.json
+Session.vim
+notes
+tags
+cscope.out
+.idea/
+**/cmake-build-debug/

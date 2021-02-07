@@ -1,0 +1,60 @@
+{
+    "extensions.ignoreRecommendations": false,
+    "window.titleBarStyle": "custom",
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": "storage.type.class.doxygen",
+                "settings": {
+                    "foreground": "#5f6672",
+                }
+            },
+            {
+                "scope": "support.type",
+                "settings": {
+                    "foreground": "#57adb8ff",
+                }
+            },
+            {
+                "scope": "entity.name.type.namespace.scope-resolution",
+                "settings": {
+                    "foreground": "#a9b2c3",
+                }
+            },
+            {
+                "scope": "entity.name.type",
+                "settings": {
+                    "foreground": "#56b6c2",
+                    "fontStyle": ""
+                }
+            },
+            {
+                "scope": "variable.other.enummember",
+                "settings": {
+                    "foreground": "#d19a66",
+                    "fontStyle": ""
+                }
+            },
+            {
+                "scope": "entity.name.namespace",
+                "settings": {
+                    "foreground": "#a9b2c3",
+                    "fontStyle": ""
+                }
+            },
+            {
+                "scope": "variable.other.global",
+                "settings": {
+                    "foreground": "#8494f9",
+                    "fontStyle": ""
+                }
+            },
+        ]
+    },
+    "C_Cpp.updateChannel": "Insiders",
+    "editor.lineNumbers": "relative",
+    "workbench.colorTheme": "Plastic Legacy v2",
+    "window.zoomLevel": -0.5,
+    "workbench.iconTheme": "vscode-great-icons",
+    "vim.useSystemClipboard": true,
+}
