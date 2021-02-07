@@ -3,3 +3,5 @@
 	name = Natanael Rabello
 [core]
 	excludesfile = /home/common/.config/git/gitignore
+[pull]
+	ff = only
