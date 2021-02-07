@@ -1,0 +1,5 @@
+[user]
+	email = natanael.rabello@outlook.com
+	name = Natanael Rabello
+[core]
+	excludesfile = /home/nanter/.config/git/gitignore
