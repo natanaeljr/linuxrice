@@ -58,4 +58,7 @@ xfce4-power-manager &
 ##############################################################
 # Window Manager
 ##############################################################
-exec /usr/local/bin/dwm-init
+if [[ -f "${HOME}/.dwmrc" ]]; then
+    source "${HOME}/.dwmrc"
+fi
+exec /usr/local/bin/dwm
