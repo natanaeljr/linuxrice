@@ -1,0 +1,7 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Exec=google-chrome-stable --app=https://srv-guacamole-ped.datacom.net
+Name=Guacamole PED
+Comment=Datacom Remote Server PED
+Icon=/home/common/.local/share/applications/guacamole.png
