@@ -1,1 +1,1 @@
-rofi -show drun -theme Arc-Dark -show-icons
+rofi -show drun -font 'SF Mono 14' -theme Arc-Dark -show-icons
