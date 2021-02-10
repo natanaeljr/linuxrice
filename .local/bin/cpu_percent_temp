@@ -1,0 +1,7 @@
+#!/bin/zsh
+
+set -euo pipefail
+
+SENSORS=$(sensors)
+
+( awk -f ~/.local/bin/cpuawk; echo $SENSORS | awk '/CPU:/ {print $2}'; echo $SENSORS | awk '/VRM:/ {print $2}' ) | xargs
