@@ -1,0 +1,23 @@
+#!/bin/sh
+
+# Echo cached values of `sensors` if called more than ONCE A SECOND.
+# Otherwise, just output `sensors` and cache new values.
+# use -v to debug and check if it output from cache or `sensors`.
+
+set -E
+
+readonly timecache=/tmp/sensors-cached-time
+readonly sensorscache=/tmp/sensors-cached-values
+
+debug=$([[ "$1" = "-v" ]] && echo 1)
+epoch_ns=$(date +%s%N)
+lasttime=$([[ -f "$timecache" ]] && cat "$timecache" || echo $epoch_ns)
+
+if [[ $((epoch_ns - lasttime)) -lt 1000000000 ]] && [[ -f "$sensorscache" ]]; then
+  cat $sensorscache
+  [ $debug ] && echo $epoch_ns "FROM_FILE"
+else
+  echo "$epoch_ns" > $timecache
+  sensors | tee "$sensorscache"
+  [ $debug ] && echo $epoch_ns "FROM_CMD"
+fi
