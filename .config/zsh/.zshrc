@@ -22,9 +22,9 @@ fi
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# My aliases
-if [ -f "$HOME/.alias" ]; then
-    source "$HOME/.alias"
+# Load aliases
+if [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/shell/aliasrc" ]; then
+  source "${XDG_CONFIG_HOME:-$HOME/.config}/shell/aliasrc"
 fi
 
 # Path to your oh-my-zsh installation.
