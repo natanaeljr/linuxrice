@@ -15,7 +15,9 @@ fi
 # powerlevel10k
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+if [[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/p10k/p10k.zsh" ]]; then
+  source "${XDG_CONFIG_HOME:-$HOME/.config}/p10k/p10k.zsh"
+fi
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
