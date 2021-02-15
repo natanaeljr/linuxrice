@@ -11,6 +11,6 @@ BEGIN {
   total = 0
   for (i=2; i<=NF; i++)
     total += $i
-  printf "%02d%%\n", (1-(idle-prev_idle)/(total-prev_total))*100
+  printf "%02d\n", (1-(idle-prev_idle)/(total-prev_total))*100
   printf "%d %d", idle, total > "/tmp/cpu-usage-cache"
 }
