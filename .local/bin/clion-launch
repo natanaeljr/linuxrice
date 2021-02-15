@@ -1,5 +1,0 @@
-#!/bin/sh
-
-# Launch for dwm and i3 Window Managers
-wmname LG3D
-exec clion
