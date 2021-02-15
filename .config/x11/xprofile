@@ -11,4 +11,5 @@ nm-applet &                             # network manager
 volumeicon &                            # simple volume control icon
 redshift-qt &                           # adjust color temperature for night
 xfce4-power-manager &                   # power manager
+xfce4-screensaver &                     # screensaver and locker
 /usr/lib/xfce4/notifyd/xfce4-notifyd &  # notification daemon
