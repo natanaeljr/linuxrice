@@ -3,7 +3,7 @@ export TERM=xterm-256color
 export TERMINAL=termite
 export BROWSER=google-chrome-stable
 export EDITOR=vim
-export LESS=-RX
+export LESS=-RXF
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
