@@ -11,3 +11,54 @@
 
 ## NOTES:
 yad --calendar --fixed --mouse --skip-taskbar --no-buttons --sticky --on-to
+
+
+
+## PRIME:
+
+### Install ArchLinux CLI (no graphic environment)
+
+After installed, on first boot:
+
+- enable DHCP for internet: sudo systemctl start dhcpdc.service
+- install Xorg: sudo pacman -S xorg xorg-init
+- install video driver with mhwd
+- install window manager: git clone https://github.com/natanaeljr/dwm; sudo make install
+- install status bar: git clone https://github.com/natanaeljr/dwmblocks; sudo make install
+- install pre-requisite packages: gvim, yay, termite, ranger, rofi, dmenu, google-chrome, gnome-keyring, xdg-utils, wmname, unzip
+- create dwm-init at /usr/local/bin/dwm-init with the following: (TODO: install dwm-init along with dwm make install)
+if [[ -x "${HOME}/.dwmrc" ]]; then
+    "${HOME}/.dwmrc"
+fi
+exec /usr/local/bin/dwm
+
+- copy /etc/X11/xinit/xinitrc to ~/.xinitrc, edit it, and add the exec /usr/local/bin/dwm-init to the last line
+- install network-manager-applet and start/enable the service NetworkManager
+- install additional packages: volumeicon, redshift-qt, xfce4-power-manager, xfce4-screensaver, xfce4-notifyd, feh, mesa-demos (for glxgears), manjaro-settings-manager, tree
+
+- automatic start of the X server on tty1: add the following to ~/.zprofile:
+if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
+  exec startx
+fi
+
+- Automatic login to virtual console: https://wiki.archlinux.org/index.php/getty
+sudo systemctl edit getty@tty1
+Add the following
+[Service]
+ExecStart=
+ExecStart=-/usr/bin/agetty --autologin username --noclear %I $TERM
+Type=simple
+
+- Change GRUB Timeout: sudo vim /etc/default/grub; edit GRUB_TIMEOUT=X; sudo update-grub
+
+- Install Audio packages: (pulseaudio, pulseaudio-alsa, pavucontrol), and start/enable with $ systemctl --user enable pulseaudio
+
+- Install more customization packages oh-my-zsh, zsh-theme-powerlevel10k, fzf
+
+- For using VPNs (openvpn) 
+  - Add openvpn config (TODO document/record)
+  - resolve the VPN DNS correctly run: $ sudo systemctl enable systemd-resolve 
+  - add certificate: https://wiki.archlinux.org/index.php/User:Grawity/Adding_a_trusted_CA_certificate
+
+- Download the linux-rice for the home directory from my github.
+
