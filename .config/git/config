@@ -2,7 +2,7 @@
 	email = natanael.rabello@outlook.com
 	name = Natanael Rabello
 [core]
-	excludesfile = /home/common/.config/git/gitignore
+	excludesfile = /home/common/.config/git/ignore
 	pager = diff-so-fancy | less
 [pull]
 	ff = only
