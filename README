@@ -1,0 +1,13 @@
+# Linux Rice
+
+## TODO:
+- map all tools used in the linux-rice configs, list them on README
+- status bar colored, clickable, and spawn windows on click with yad
+- status bar media control and handle media keys
+- dwm fix child window selection
+- dwm floating terminal
+- perfectionate zshrc
+
+
+## NOTES:
+yad --calendar --fixed --mouse --skip-taskbar --no-buttons --sticky --on-to
