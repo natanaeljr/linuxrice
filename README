@@ -1,13 +1,13 @@
 # Linux Rice
 
 ## TODO:
+- random wallpapers on login
+- move .vim to .local/share/vim
 - map all tools used in the linux-rice configs, list them on README
 - status bar colored, clickable, and spawn windows on click with yad
 - status bar media control and handle media keys
 - dwm fix child window selection
 - dwm floating terminal
-- perfectionate zshrc
-- random wallpapers on login
 
 
 ## NOTES:
