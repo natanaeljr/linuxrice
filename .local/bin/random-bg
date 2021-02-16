@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Set random wallpaper
+
+set -Eo pipefail
+
+readonly wallcache="${XDG_CACHE_HOME:-$HOME/.cache}/random-bg-dir"
+
+walldir=${1:-$wallcache}
+
+if [[ -d "$walldir" ]]; then
+  [[ -n "$1" ]] && ln -sf "$1" $wallcache
+  ls -d "$walldir"/* | shuf | tail -1 | xargs -d '\n' feh --bg-fill
+else
+  echo "Try passing a wallpapers directory as argument"
+  exit 1
+fi
