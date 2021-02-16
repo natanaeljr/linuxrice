@@ -20,7 +20,6 @@ set nowrap                  " Wrap/nowrap lines
 set number                  " Display line numbers
 "set number relativenumber   " Display line numbers relative to the cursor
 set mouse=a                 " Enable mouse
-set hlsearch                " Highlight all search matches
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Syntax Highlight
