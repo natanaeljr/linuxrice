@@ -1,7 +1,6 @@
 # Linux Rice
 
 ## TODO:
-- random wallpapers on login
 - move .vim to .local/share/vim
 - map all tools used in the linux-rice configs, list them on README
 - status bar colored, clickable, and spawn windows on click with yad

@@ -3,7 +3,7 @@
 # This file runs when a DM logs you into a graphical session.
 # If you use startx/xinit like a Chad, this file will also be sourced.
 
-[ -x "$HOME/.fehbg" ] && "$HOME/.fehbg" # set the background
+random-bg || ([ -x "$HOME/.fehbg" ] && "$HOME/.fehbg") # set the background
 setxkbmap us altgr-intl                 # keyboard layout
 xset r rate 220 38                      # speed up key repeat rate
 unclutter &                             # remove mouse when idle
