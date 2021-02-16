@@ -36,33 +36,30 @@ plugins=(
 # Load oh-my-zsh plugin manager
 source $ZSH/oh-my-zsh.sh
 
-# vi mode
-bindkey -v
-# Use vim keys in tab complete menu:
-bindkey -M menuselect 'h' vi-backward-char
-bindkey -M menuselect 'k' vi-up-line-or-history
-bindkey -M menuselect 'l' vi-forward-char
-bindkey -M menuselect 'j' vi-down-line-or-history
-bindkey -v '^?' backward-delete-char
-
-# Fix Alt+Backspace to keep deleting backword word
-function backward_kill_word_alt_backspace() {
-  bindkey '^[^?' backward-kill-word
-}
-
-# Fix Home/End keys
-function fix_home_end_keys() {
-  bindkey '^[OH' beginning-of-line
-  bindkey '^[OF' end-of-line
-}
-
-# Accept autosuggestion with Ctrl+N
-function autosuggest_accept_ctrl_n() {
-  bindkey '^N' autosuggest-accept
-}
-
 # Generate completion files
 autoload -U compinit && compinit
+
+# Bindkeys (wrapped in a function to run after zsh-vi-mode init)
+function bind_keys() {
+  # vi mode
+  bindkey -v
+  # Use vim keys in tab complete menu:
+  bindkey -M menuselect 'h' vi-backward-char
+  bindkey -M menuselect 'k' vi-up-line-or-history
+  bindkey -M menuselect 'l' vi-forward-char
+  bindkey -M menuselect 'j' vi-down-line-or-history
+  bindkey -v '^?' backward-delete-char
+
+  # Fix Alt+Backspace to keep deleting backword word
+  bindkey '^[^?' backward-kill-word
+
+  # Fix Home/End keys
+  bindkey '^[OH' beginning-of-line
+  bindkey '^[OF' end-of-line
+
+  # Accept autosuggestion with Ctrl+N
+  bindkey '^N' autosuggest-accept
+}
 
 # Load Fuzzy Finder
 function load_fzf() {
@@ -72,9 +69,7 @@ function load_fzf() {
 
 # Wrap settings within this function to override zsh-vi-mode keybindings
 function zvm_after_init() {
-  backward_kill_word_alt_backspace
-  fix_home_end_keys
-  autosuggest_accept_ctrl_n
+  bind_keys
   load_fzf
 
   # Cursor modes (with zsh-vi-mode); must be after plugin loading
