@@ -1,5 +1,7 @@
 # Linux Rice
 
+My day-to-day Linux Rice: dotfiles, configs, scripts, fonts, docs and more.
+
 ## TODO:
 - map all tools used in the linux-rice configs, list them on README
 - status bar colored, clickable, and spawn windows on click with yad

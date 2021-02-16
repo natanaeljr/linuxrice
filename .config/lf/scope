@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Script taken form Luke Smith's voidrice.
+
 set -C -f -u
 #IFS=$'\n'
 IFS="$(printf '%b_' '\n')"; IFS="${IFS%_}"
