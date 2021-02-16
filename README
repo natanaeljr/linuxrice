@@ -7,6 +7,7 @@
 - dwm fix child window selection
 - dwm floating terminal
 - perfectionate zshrc
+- random wallpapers on login
 
 
 ## NOTES:
@@ -53,7 +54,7 @@ Type=simple
 
 - Install Audio packages: (pulseaudio, pulseaudio-alsa, pavucontrol), and start/enable with $ systemctl --user enable pulseaudio
 
-- Install more customization packages oh-my-zsh, zsh-theme-powerlevel10k, zsh-autosuggestions, zsh-fast-syntax-highlighting, fzf
+- Install more customization packages oh-my-zsh, zsh-theme-powerlevel10k, zsh-autosuggestions, zsh-fast-syntax-highlighting, zsh-vi-mode, fzf
 
 - For using VPNs (openvpn) 
   - Add openvpn config (TODO document/record)

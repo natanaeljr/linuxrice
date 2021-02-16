@@ -13,11 +13,6 @@ if [[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/p10k/p10k.zsh" ]]; then
   source "${XDG_CONFIG_HOME:-$HOME/.config}/p10k/p10k.zsh"
 fi
 
-# Load aliases
-if [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/shell/aliasrc" ]; then
-  source "${XDG_CONFIG_HOME:-$HOME/.config}/shell/aliasrc"
-fi
-
 # Path to oh-my-zsh installation.
 export ZSH="/usr/share/oh-my-zsh"
 
@@ -41,21 +36,62 @@ plugins=(
 # Load oh-my-zsh plugin manager
 source $ZSH/oh-my-zsh.sh
 
+# vi mode
+bindkey -v
+# Use vim keys in tab complete menu:
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'k' vi-up-line-or-history
+bindkey -M menuselect 'l' vi-forward-char
+bindkey -M menuselect 'j' vi-down-line-or-history
+bindkey -v '^?' backward-delete-char
+
+# Fix Alt+Backspace to keep deleting backword word
+function backward_kill_word_alt_backspace() {
+  bindkey '^[^?' backward-kill-word
+}
+
 # Fix Home/End keys
-bindkey '^[OH' beginning-of-line
-bindkey '^[OF' end-of-line
+function fix_home_end_keys() {
+  bindkey '^[OH' beginning-of-line
+  bindkey '^[OF' end-of-line
+}
 
 # Accept autosuggestion with Ctrl+N
-bindkey '^N' autosuggest-accept
+function autosuggest_accept_ctrl_n() {
+  bindkey '^N' autosuggest-accept
+}
 
 # Generate completion files
 autoload -U compinit && compinit
 
 # Load Fuzzy Finder
-[ -f /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh
-[ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
+function load_fzf() {
+  [ -f /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh
+  [ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
+}
+
+# Wrap settings within this function to override zsh-vi-mode keybindings
+function zvm_after_init() {
+  backward_kill_word_alt_backspace
+  fix_home_end_keys
+  autosuggest_accept_ctrl_n
+  load_fzf
+
+  # Cursor modes (with zsh-vi-mode); must be after plugin loading
+  ZVM_NORMAL_MODE_CURSOR=$ZVM_CURSOR_BLOCK
+  ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_BLOCK
+  ZVM_VISUAL_MODE_CURSOR=$ZVM_CURSOR_BLOCK
+  ZVM_VISUAL_LINE_MODE_CURSOR=$ZVM_CURSOR_BLOCK
+}
 
 # Load auto suggestions
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-# Load syntax highlighting; should be last.
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
+# Load syntax highlighting;
 source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
+# Load vi-mode plugin (must load after zsh-autosuggestions; for sparse cmd-line to work)
+source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+
+# Load aliases (load last to override any previous aliases)
+if [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/shell/aliasrc" ]; then
+  source "${XDG_CONFIG_HOME:-$HOME/.config}/shell/aliasrc"
+fi
