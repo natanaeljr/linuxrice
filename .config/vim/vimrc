@@ -1,3 +1,16 @@
+" __   _(_)_ __ ___  _ __ ___ 
+" \ \ / / | '_ ` _ \| '__/ __|
+"  \ V /| | | | | | | | | (__ 
+"   \_/ |_|_| |_| |_|_|  \___|
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Environment (ref: https://tlvince.com/vim-respect-xdg)
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set viminfo+=n$XDG_CACHE_HOME/vim/viminfo   " Change .viminfo location
+set directory=$XDG_CACHE_HOME/vim,~/,/tmp   " Change .swp files location
+set backupdir=$XDG_CACHE_HOME/vim,~/,/tmp   " Change .bak files location
+set runtimepath=$XDG_DATA_HOME/vim,$XDG_DATA_HOME/vim/after,$VIM,$VIMRUNTIME
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Tab
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
