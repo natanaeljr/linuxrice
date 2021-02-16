@@ -8,7 +8,7 @@ setxkbmap us altgr-intl                 # keyboard layout
 xset r rate 220 38                      # speed up key repeat rate
 unclutter &                             # remove mouse when idle
 nm-applet &                             # network manager
-volumeicon &                            # simple volume control icon
+pasystray &                             # volume control for pusleaudio
 redshift-qt &                           # adjust color temperature for night
 xfce4-power-manager &                   # power manager
 xfce4-screensaver &                     # screensaver and locker
