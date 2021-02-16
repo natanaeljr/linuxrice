@@ -5,7 +5,8 @@ alias \
 	cp="cp -iv" \
 	mv="mv -iv" \
 	rm="rm -vI" \
-	mkd="mkdir -pv" \
+	rmdir="rmdir -v" \
+	mkdir="mkdir -pv" \
 
 # Colorize commands when possible.
 alias \
