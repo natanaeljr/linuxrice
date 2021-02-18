@@ -7,6 +7,7 @@ My day-to-day Linux Rice: dotfiles, configs, scripts, fonts, docs and more.
 - status bar colored, clickable, and spawn windows on click with yad
 - status bar media control and handle media keys
 - dwm fix child window selection
+- dwm scratchpad
 
 
 ## NOTES:
@@ -62,3 +63,7 @@ Type=simple
 
 - Download the linux-rice for the home directory from my github.
 
+
+- Aditional software list:
+  * spotifyd (enable user service)
+  * playerctl (for spotify cli control)
