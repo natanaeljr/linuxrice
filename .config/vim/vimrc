@@ -34,6 +34,7 @@ set nowrap                  " Wrap/nowrap lines
 set number                  " Display line numbers
 "set number relativenumber   " Display line numbers relative to the cursor
 set mouse=a                 " Enable mouse
+set ttimeoutlen=100         " Timeout on escape key codes (e.g: ^[O)
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Syntax Highlight
