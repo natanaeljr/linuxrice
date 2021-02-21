@@ -1,0 +1,24 @@
+#!/bin/sh
+
+# Spotify status bar
+
+readonly maxlen=40
+readonly cache=/tmp/spotify-bar-cache
+
+status="$(cut -b-$maxlen $cache)"
+length="$(wc -c $cache)"
+length=${length% *}
+if [ $length -gt $maxlen ]; then
+  status="${status:0:$maxlen}…"
+fi
+if [ $length -gt 0 ]; then
+  printf "[%s]\n" "$status"
+else
+  echo [spotify]
+fi
+
+case $BUTTON in
+  1) ( spt playback --previous --device Spotifyd@$HOST > "$cache" && pkill -RTMIN+$SIGNAL dwmblocks ) & ;;
+  2) ( spt playback --toggle --device Spotifyd@$HOST > "$cache" && pkill -RTMIN+$SIGNAL dwmblocks ) & ;;
+  3) ( spt playback --next --device Spotifyd@$HOST > "$cache" && pkill -RTMIN+$SIGNAL dwmblocks ) & ;;
+esac

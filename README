@@ -67,4 +67,5 @@ Type=simple
 
 - Aditional software list:
   * spotifyd (enable user service)
+  * spotify-tui (spotify in terminal)
   * playerctl (for spotify cli control)
