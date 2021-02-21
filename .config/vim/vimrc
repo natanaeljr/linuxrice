@@ -50,6 +50,14 @@ set wildoptions=tagfile     " Use Ctrl+D to list matching tags
 syntax on
 colorscheme slate
 
+if has("gui_running")
+set guioptions-=T           " Remove toolbar
+set guioptions-=m           " Remove menubar
+set guifont=SF\ Mono
+set background=light
+colorscheme github
+endif
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Copy/Paste
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
