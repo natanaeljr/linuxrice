@@ -20,3 +20,8 @@
 	old = red bold
 	new = green bold
 	whitespace = red reverse
+[diff]
+	tool = gvimdiff
+	guitool = meld
+[difftool]
+	prompt = false
