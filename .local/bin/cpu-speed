@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# CPU Speed in GHz
+
+readarray -t array < <(cat /proc/cpuinfo | grep "^[c]pu MHz" | cut -d: -f2 | tr -d ' ')
+
+sum=0
+for i in "${array[@]}"; do
+  sum=$(bc -l <<< "$sum + $i")
+done
+sum=$(bc -l <<< "$sum / ${#array[@]} / 1000")
+
+printf "%.2f\n" $sum
