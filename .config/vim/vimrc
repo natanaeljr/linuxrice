@@ -53,7 +53,7 @@ colorscheme slate
 if has("gui_running")
 set guioptions-=T           " Remove toolbar
 set guioptions-=m           " Remove menubar
-set guifont=SF\ Mono
+set guifont=SF\ Mono\ 11
 set background=light
 colorscheme github
 endif
