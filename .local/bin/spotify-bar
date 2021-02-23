@@ -25,7 +25,7 @@ case $BUTTON in
   *) if [ -f $updating ]; then
        rm $updating
      else
-       touch $updating; ( spt playback --status --device Spotifyd@$HOST > "$cache" && pkill -RTMIN+$SIGNAL dwmblocks ) &
+       touch $updating; ( spt playback --status > "$cache" && pkill -RTMIN+$SIGNAL dwmblocks ) &
      fi
      ;;
 esac
