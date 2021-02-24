@@ -7,9 +7,6 @@
 # Adds `~/.local/bin` to $PATH
 export PATH="$PATH:${$(find ~/.local/bin -type d -printf %p:)%%:}"
 
-# Terminal settings:
-export TERM=xterm-256color
-
 # Default programs:
 export EDITOR="vim"
 export TERMINAL="termite"
