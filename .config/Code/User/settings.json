@@ -53,8 +53,10 @@
     },
     "C_Cpp.updateChannel": "Insiders",
     "editor.lineNumbers": "relative",
-    "workbench.colorTheme": "Plastic Legacy v2",
-    "window.zoomLevel": -0.5,
+    "workbench.colorTheme": "Monokai",
     "workbench.iconTheme": "vscode-great-icons",
     "vim.useSystemClipboard": true,
+    "editor.fontFamily": "'SF Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.cursorBlinking": "solid",
+    "python.defaultInterpreterPath": "/usr/bin/python",
 }
