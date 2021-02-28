@@ -54,7 +54,9 @@ function bind_keys() {
   bindkey '^[^?' backward-kill-word
 
   # Fix Home/End keys
+  bindkey "^[[H" beginning-of-line
   bindkey '^[OH' beginning-of-line
+  bindkey "^[[F" end-of-line
   bindkey '^[OF' end-of-line
 
   # Accept autosuggestion with Ctrl+N
