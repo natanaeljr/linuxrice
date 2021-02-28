@@ -19,9 +19,9 @@ else
 fi
 
 case $BUTTON in
-  1) touch $updating; ( spt playback --previous --device Spotifyd@$HOST > "$cache" && pkill -RTMIN+$SIGNAL dwmblocks ) & ;;
-  2) touch $updating; ( spt playback --toggle --device Spotifyd@$HOST > "$cache" && pkill -RTMIN+$SIGNAL dwmblocks ) & ;;
-  3) touch $updating; ( spt playback --next --device Spotifyd@$HOST > "$cache" && pkill -RTMIN+$SIGNAL dwmblocks ) & ;;
+  1) touch $updating; ( spt playback --previous --device Spotifyd@ryzenix > "$cache" && pkill -RTMIN+$SIGNAL dwmblocks ) & ;;
+  2) touch $updating; ( spt playback --toggle --device Spotifyd@ryzenix > "$cache" && pkill -RTMIN+$SIGNAL dwmblocks ) & ;;
+  3) touch $updating; ( spt playback --next --device Spotifyd@ryzenix > "$cache" && pkill -RTMIN+$SIGNAL dwmblocks ) & ;;
   *) if [ -f $updating ]; then
        rm $updating
      else
