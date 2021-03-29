@@ -7,6 +7,7 @@ clickable_url = true
 #font = Monospace 9
 #font = Noto Color Emoji 15
 #font = DejaVuSansMono Nerd Font 10
+#font = JetBrains Mono 12
 font = SF Mono 11
 #fullscreen = true
 icon_name = terminal
