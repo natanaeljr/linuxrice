@@ -62,8 +62,10 @@
 ;; Load the theme
 (load-theme 'solarized-dark t)
 
-(add-to-list 'default-frame-alist '(font . "JetBrains Mono" ))
-(set-face-attribute 'default nil :font "JetBrains Mono-11" )
+; (add-to-list 'default-frame-alist '(font . "JetBrains Mono" ))
+; (set-face-attribute 'default nil :font "JetBrains Mono-11" )
+(add-to-list 'default-frame-alist '(font . "SF Mono" ))
+(set-face-attribute 'default nil :font "SF Mono-11" )
 
 (require 'org-bullets)
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
@@ -75,7 +77,6 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(org-agenda-files '("~/FERIAS.org"))
  '(package-selected-packages
    '(undo-tree linum-relative use-package solarized-theme org-bullets markdown-mode helm evil-visual-mark-mode)))
 (custom-set-faces
