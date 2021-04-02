@@ -72,13 +72,18 @@
 
 (setq backup-directory-alist `(("." . "~/.cache/emacs")))
 
+(desktop-save-mode 1)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   '("b73a23e836b3122637563ad37ae8c7533121c2ac2c8f7c87b381dd7322714cd0" default))
+ '(org-agenda-files '("~/notes/FERIAS.org"))
  '(package-selected-packages
-   '(undo-tree linum-relative use-package solarized-theme org-bullets markdown-mode helm evil-visual-mark-mode)))
+   '(one-themes undo-tree linum-relative use-package solarized-theme org-bullets markdown-mode helm evil-visual-mark-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
