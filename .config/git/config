@@ -1,5 +1,5 @@
 [core]
-	excludesfile = /home/common/.config/git/ignore
+	excludesfile = /home/njr/.config/git/ignore
 	pager = diff-so-fancy | less
 [pull]
 	ff = only
