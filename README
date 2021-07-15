@@ -55,9 +55,9 @@ Type=simple
 
 - Change GRUB Timeout: sudo vim /etc/default/grub; edit GRUB_TIMEOUT=X; sudo update-grub
 
-- Install Audio packages: (pulseaudio, pulseaudio-alsa, pavucontrol), and start/enable with $ systemctl --user enable pulseaudio
+- Install Audio packages: (pulseaudio, pulseaudio-alsa, pavucontrol, pasystray), and start/enable with $ systemctl --user enable pulseaudio
 
-- Install more customization packages oh-my-zsh, zsh-theme-powerlevel10k, zsh-autosuggestions, zsh-fast-syntax-highlighting, zsh-vi-mode, fzf
+- Install more customization packages oh-my-zsh, zsh-theme-powerlevel10k, zsh-autosuggestions, zsh-fast-syntax-highlighting, zsh-vi-mode, fzf, fzf-mark (git clone to /opt)
 
 - For using VPNs (openvpn) 
   - Add openvpn config (TODO document/record)

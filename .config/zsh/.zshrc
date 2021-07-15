@@ -61,12 +61,17 @@ function bind_keys() {
 
   # Accept autosuggestion with Ctrl+N
   bindkey '^N' autosuggest-accept
+
+  # Open fzf-marker for directory bookmarks
+  bindkey '^k' fzm
 }
 
 # Load Fuzzy Finder
 function load_fzf() {
   [ -f /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh
   [ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
+  # Load fzf-marks
+  [ -f /opt/fzf-marks/fzf-marks.plugin.zsh ] && source /opt/fzf-marks/fzf-marks.plugin.zsh
 }
 
 # Wrap settings within this function to override zsh-vi-mode keybindings
