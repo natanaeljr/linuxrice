@@ -83,7 +83,7 @@ cursor_foreground = #000000
 #color15 = #ffffff
 
 # Argonaut color theme
-background= rgba(03, 03, 05, 0.75)
+background= rgba(03, 03, 05, 0.85)
 foreground= #FFFFFAFFF499
 foreground_bold= #9E9B9C2A9A3A
 #cursor = #FFFFFAFFF499
