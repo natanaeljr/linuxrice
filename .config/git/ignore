@@ -1,5 +1,5 @@
 **/[Bb]uild/
-.vscode/
+.vscode
 .ccls-cache
 compile_commands.json
 Session.vim
