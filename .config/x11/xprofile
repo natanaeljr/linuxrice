@@ -14,3 +14,4 @@ picom -CGb -m 1.0 --no-fading-openclose --blur-background # window compositor
 xfce4-power-manager &                                     # power manager
 xfce4-screensaver &                                       # screensaver and locker
 /usr/lib/xfce4/notifyd/xfce4-notifyd &                    # notification daemon
+notification-monitor &                                    # notification logger

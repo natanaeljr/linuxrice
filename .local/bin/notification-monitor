@@ -1,0 +1,54 @@
+#!/usr/bin/env python3
+
+# Listen to any notification event and save it into a txt file.
+# Vinicius Longaray's script:
+# https://gist.github.com/v1nns/cea30ec48d4f035471a091797eec6262
+
+import dbus
+from gi.repository import GLib
+from dbus.mainloop.glib import DBusGMainLoop
+import time
+
+# default path
+log_file = "/tmp/notifications.log"
+
+# Callback for any notification received from D-BUS
+def notifications(bus, message):
+    # before doing any kind of magic,
+    # check docs: https://developer.gnome.org/notification-spec/#command-notify
+
+    # parse arguments from MethodCallMessage
+    args = message.get_args_list()
+    app_name = args[0]
+
+    if len(app_name) > 0:
+        summary = args[3].strip('\n')
+        body = args[4].strip('\n')
+
+        timestamp = time.strftime("%Y/%m/%d %H:%M")
+
+        # format string
+        body_string = " - " + body if len(body) > 0 else ""
+        string = "{0} - [{1:.15}] - {2}{3}\n".format(
+            timestamp, app_name, summary, body_string
+        )
+
+        # sometimes a blank line would appear out of nowhere, in order to
+        # prevent this, get file object in binary mode
+        file = open(log_file, 'a')
+
+        # write string to log file
+        print(string, file=file, end='')
+        file.close()
+
+
+DBusGMainLoop(set_as_default=True)
+
+bus = dbus.SessionBus()
+bus.add_match_string_non_blocking(
+    "eavesdrop=true, interface='org.freedesktop.Notifications', member='Notify'"
+)
+bus.add_message_filter(notifications)
+
+main_loop = GLib.MainLoop()
+main_loop.run()
