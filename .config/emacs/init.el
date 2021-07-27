@@ -12,6 +12,7 @@
 (require 'undo-tree)
 (global-undo-tree-mode)
 
+(setq evil-want-C-u-scroll t)
 (require 'evil)
 (evil-set-undo-system 'undo-tree)
 (evil-mode t)
