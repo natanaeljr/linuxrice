@@ -10,7 +10,7 @@ unclutter --timeout=10 &                # remove mouse when idle
 nm-applet &                             # network manager
 pasystray &                             # volume control for pusleaudio
 redshift-qt &                           # adjust color temperature for night
-xcompmgr &                              # window compositor
+picom -CGb -m 1.0 --no-fading-openclose # window compositor
 xfce4-power-manager &                   # power manager
 xfce4-screensaver &                     # screensaver and locker
 /usr/lib/xfce4/notifyd/xfce4-notifyd &  # notification daemon
