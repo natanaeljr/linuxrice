@@ -3,14 +3,14 @@
 # This file runs when a DM logs you into a graphical session.
 # If you use startx/xinit like a Chad, this file will also be sourced.
 
-random-bg || ([ -x "$HOME/.fehbg" ] && "$HOME/.fehbg") # set the background
-setxkbmap us altgr-intl                 # keyboard layout
-xset r rate 220 38                      # speed up key repeat rate
-unclutter --timeout=10 &                # remove mouse when idle
-nm-applet &                             # network manager
-pasystray &                             # volume control for pusleaudio
-redshift-qt &                           # adjust color temperature for night
-picom -CGb -m 1.0 --no-fading-openclose # window compositor
-xfce4-power-manager &                   # power manager
-xfce4-screensaver &                     # screensaver and locker
-/usr/lib/xfce4/notifyd/xfce4-notifyd &  # notification daemon
+random-bg || ([ -x "$HOME/.fehbg" ] && "$HOME/.fehbg")    # set the background
+setxkbmap us altgr-intl                                   # keyboard layout
+xset r rate 220 38                                        # speed up key repeat rate
+unclutter --timeout=10 &                                  # remove mouse when idle
+nm-applet &                                               # network manager applet
+pasystray &                                               # volume control for pusleaudio
+redshift-qt &                                             # adjust color temperature for night
+picom -CGb -m 1.0 --no-fading-openclose --blur-background # window compositor
+xfce4-power-manager &                                     # power manager
+xfce4-screensaver &                                       # screensaver and locker
+/usr/lib/xfce4/notifyd/xfce4-notifyd &                    # notification daemon
