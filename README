@@ -3,6 +3,8 @@
 My day-to-day Linux Rice: dotfiles, configs, scripts, fonts, docs and more.
 
 ## TODO:
+- add a default wallpaper to this repo, for auto setup on new installations
+- create a default mimeapp.list file
 - map all tools used in the linux-rice configs, list them on README
 - status bar colored, clickable, and spawn windows on click with yad
 - status bar media control and handle media keys
@@ -13,62 +15,71 @@ My day-to-day Linux Rice: dotfiles, configs, scripts, fonts, docs and more.
 - dwm allow to apply gaps to all layout types
 - dwm float calculator app
 
-
-## NOTES:
-yad --calendar --fixed --mouse --skip-taskbar --no-buttons --sticky --on-to
-
-
-
 ## PRIME:
 
 ### Install ArchLinux CLI (no graphic environment)
 
 After installed, on first boot:
 
-- enable DHCP for internet: sudo systemctl start dhcpdc.service
-- install Xorg: sudo pacman -S xorg xorg-init
-- install video driver with mhwd
-- install window manager: git clone https://github.com/natanaeljr/dwm; sudo make install
-- install status bar: git clone https://github.com/natanaeljr/dwmblocks; sudo make install
-- install pre-requisite packages: gvim, yay, termite, ranger, rofi, dmenu, google-chrome, gnome-keyring, xdg-utils, wmname, unzip
-- create dwm-init at /usr/local/bin/dwm-init with the following: (TODO: install dwm-init along with dwm make install)
-if [[ -x "${HOME}/.dwmrc" ]]; then
-    "${HOME}/.dwmrc"
-fi
-exec /usr/local/bin/dwm
+- Enable DHCP for internet: sudo systemctl start dhcpcd.service
+- Install NetworkManager: sudo pacman -S networkmanager ; sudo systemctl start NetworkManager ; sudo systemctl enable NetworkManager
+- Download dotfiles/configs: git clone https://github.com/natanaeljr/linuxrice
+- Install Xorg: sudo pacman -S --needed xorg xorg-xinit
+- Install video driver with mhwd
+- Install window manager: git clone https://github.com/natanaeljr/dwm; sudo make install
+- Install status bar: git clone https://github.com/natanaeljr/dwmblocks; sudo make install
 
-- copy /etc/X11/xinit/xinitrc to ~/.xinitrc, edit it, and add the exec /usr/local/bin/dwm-init to the last line
-- install network-manager-applet and start/enable the service NetworkManager
-- install additional packages: volumeicon, redshift-qt, xfce4-power-manager, xfce4-screensaver, xfce4-notifyd, feh, mesa-demos (for glxgears), manjaro-settings-manager, tree
+- Install pre-requisite packages:
+  sudo pacman -S --needed gvim yay ranger rofi dmenu picom gnome-keyring xdg-utils wmname unzip xclip
+  yay -S termite-aperezdc google-chrome
 
-- automatic start of the X server on tty1: add the following to ~/.zprofile:
+- Install additional packages:
+  sudo pacman -S --needed volumeicon xfce4-power-manager xfce4-screensaver xfce4-notifyd feh \
+  mesa-demos manjaro-settings-manager pamac tree network-manager-applet bpytop yad
+  yay -S redshift-qt 
+
+- Install font packages:
+  sudo pacman -S --needed noto-fonts ttf-jetbrains-mono nerd-fonts-noto-sans-mono
+
+- Automatic start of the X server on tty1: add the following to ~/.zprofile: (# already setup in the dotfiles)
 if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
   exec startx
 fi
 
 - Automatic login to virtual console: https://wiki.archlinux.org/index.php/getty
-sudo systemctl edit getty@tty1
-Add the following
+  sudo systemctl edit getty@tty1
+  Add the following:
 [Service]
 ExecStart=
-ExecStart=-/usr/bin/agetty --autologin username --noclear %I $TERM
+ExecStart=-/usr/bin/agetty --autologin <username> --noclear %I $TERM
 Type=simple
 
-- Change GRUB Timeout: sudo vim /etc/default/grub; edit GRUB_TIMEOUT=X; sudo update-grub
+- Change GRUB Timeout: sudo vim /etc/default/grub; edit GRUB_TIMEOUT=1; sudo update-grub
 
-- Install Audio packages: (pulseaudio, pulseaudio-alsa, pavucontrol, pasystray), and start/enable with $ systemctl --user enable pulseaudio
+- Install audio packages:
+  sudo pacman -S --needed pulseaudio pulseaudio-alsa pavucontrol pasystray
+  And start/enable with: systemctl --user enable pulseaudio
 
-- Install more customization packages oh-my-zsh, zsh-theme-powerlevel10k, zsh-autosuggestions, zsh-fast-syntax-highlighting, zsh-vi-mode, fzf, fzf-mark (git clone to /opt)
+- Install more customization packages:
+  sudo pacman -S --needed oh-my-zsh zsh-theme-powerlevel10k zsh-autosuggestions fzf
+  yay -S zsh-fast-syntax-highlighting zsh-vi-mode
+  sudo git clone https://github.com/urbainvaes/fzf-marks.git /opt/fzf-marks
 
-- For using VPNs (openvpn) 
+#### For Development
+
+- Install DEV packages:
+  sudo pacman -S --needed gcc gdb clang rustup
+  yay -S visual-studio-code-bin clion
+
+- For rust we need to setup toolchain:
+  rustup toolchain install stable 
+
+#### For using VPNs (openvpn) 
   - Add openvpn config (TODO document/record)
   - resolve the VPN DNS correctly run: $ sudo systemctl enable systemd-resolve 
   - add certificate: https://wiki.archlinux.org/index.php/User:Grawity/Adding_a_trusted_CA_certificate
 
-- Download the linux-rice for the home directory from my github.
-
-
-- Aditional software list:
+#### Aditional software list:
   * spotifyd (enable user service)
   * spotify-tui (spotify in terminal)
   * playerctl (for spotify cli control)
