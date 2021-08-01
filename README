@@ -35,7 +35,7 @@ After installed, on first boot:
 
 - Install additional packages:
   sudo pacman -S --needed volumeicon xfce4-power-manager xfce4-screensaver xfce4-notifyd feh \
-  mesa-demos manjaro-settings-manager pamac tree network-manager-applet bpytop yad
+  mesa-demos manjaro-settings-manager pamac tree network-manager-applet htop bpytop yad gnome-calculator
   yay -S redshift-qt 
 
 - Install font packages:
@@ -75,8 +75,9 @@ Type=simple
   sudo pacman -S jdk11-openjdk
   sudo archlinux-java set java-11-openjdk
 
-- For rust we need to setup toolchain:
+- For rust we need to setup toolchain: (and download std lib for clion)
   rustup toolchain install stable 
+  rustup component add rust-src
 
 #### For using VPNs (openvpn) 
   - Add openvpn config (TODO document/record)
