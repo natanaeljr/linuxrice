@@ -71,6 +71,10 @@ Type=simple
   sudo pacman -S --needed gcc gdb clang rustup
   yay -S visual-studio-code-bin clion
 
+- For clion we need to download JDK 11 (new versions did not work because of Java AWT support)
+  sudo pacman -S jdk11-openjdk
+  sudo archlinux-java set java-11-openjdk
+
 - For rust we need to setup toolchain:
   rustup toolchain install stable 
 
