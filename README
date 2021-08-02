@@ -30,12 +30,12 @@ After installed, on first boot:
 
 - Install pre-requisite packages:
   sudo pacman -S --needed gvim yay ranger rofi dmenu picom gnome-keyring xdg-utils wmname unzip xclip
-  yay -S termite-aperezdc google-chrome
+  yay -S --needed termite-aperezdc google-chrome
 
 - Install additional packages:
   sudo pacman -S --needed xfce4-power-manager xfce4-screensaver xfce4-notifyd feh \
   mesa-demos manjaro-settings-manager pamac tree network-manager-applet htop bpytop yad gnome-calculator
-  yay -S redshift-qt 
+  yay -S --needed redshift-qt 
 
 - Install font packages:
   sudo pacman -S --needed noto-fonts ttf-jetbrains-mono nerd-fonts-noto-sans-mono
@@ -61,14 +61,14 @@ Type=simple
 
 - Install more customization packages:
   sudo pacman -S --needed oh-my-zsh zsh-theme-powerlevel10k zsh-autosuggestions fzf
-  yay -S zsh-fast-syntax-highlighting zsh-vi-mode
+  yay -S --needed zsh-fast-syntax-highlighting zsh-vi-mode
   sudo git clone https://github.com/urbainvaes/fzf-marks.git /opt/fzf-marks
 
 #### For Development
 
 - Install DEV packages:
   sudo pacman -S --needed gcc gdb clang rustup
-  yay -S visual-studio-code-bin clion
+  yay -S --needed visual-studio-code-bin clion
 
 - For clion we need to download JDK 11 (new versions did not work because of Java AWT support)
   sudo pacman -S jdk11-openjdk
