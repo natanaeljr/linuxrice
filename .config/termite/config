@@ -3,11 +3,11 @@ allow_bold = true
 #audible_bell = false
 #bold_is_bright = true
 clickable_url = true
-#dynamic_title = true
+dynamic_title = true
 #font = Monospace 9
 #font = Noto Color Emoji 15
 #font = DejaVuSansMono Nerd Font 10
-font = JetBrains Mono NL 14px
+font = JetBrains Mono 12
 #font = SF Mono 11
 # Cell height only works for scale values >= 1
 cell_height_scale = 1.0
@@ -85,7 +85,7 @@ cursor_foreground = #000000
 #color15 = #ffffff
 
 # Argonaut color theme
-background= rgba(03, 03, 05, 0.78)
+background= rgba(03, 03, 05, 0.87)
 foreground= #FFFFFAFFF499
 foreground_bold= #9E9B9C2A9A3A
 #cursor = #FFFFFAFFF499
