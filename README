@@ -4,7 +4,6 @@ My day-to-day Linux Rice: dotfiles, configs, scripts, fonts, docs and more.
 
 ## TODO:
 - add a default wallpaper to this repo, for auto setup on new installations
-- create a default mimeapp.list file
 - map all tools used in the linux-rice configs, list them on README
 - status bar colored, clickable, and spawn windows on click with yad
 - status bar media control and handle media keys
