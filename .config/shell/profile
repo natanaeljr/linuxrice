@@ -9,7 +9,7 @@ export PATH="$PATH:${$(find ~/.local/bin -type d -printf %p:)%%:}"
 
 # Default programs:
 export EDITOR="vim"
-export TERMINAL="termite"
+export TERMINAL="alacritty"
 export BROWSER="google-chrome-stable"
 
 # Base directories:

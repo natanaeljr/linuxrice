@@ -29,8 +29,8 @@ After installed, on first boot:
 - Install status bar: git clone https://github.com/natanaeljr/dwmblocks; sudo make install
 
 - Install pre-requisite packages:
-  sudo pacman -S --needed gvim yay ranger rofi dmenu picom gnome-keyring xdg-utils wmname unzip xclip
-  yay -S --needed termite-aperezdc google-chrome
+  sudo pacman -S --needed alacritty gvim yay ranger rofi dmenu picom gnome-keyring xdg-utils wmname unzip xclip
+  yay -S --needed google-chrome
 
 - Install additional packages:
   sudo pacman -S --needed xfce4-power-manager xfce4-screensaver xfce4-notifyd feh \
