@@ -29,7 +29,7 @@ After installed, on first boot:
 - Install status bar: git clone https://github.com/natanaeljr/dwmblocks; sudo make install
 
 - Install pre-requisite packages:
-  sudo pacman -S --needed alacritty gvim yay ranger rofi dmenu picom gnome-keyring xdg-utils wmname unzip xclip
+  sudo pacman -S --needed alacritty gvim yay ranger rofi dmenu picom sxhkd gnome-keyring xdg-utils wmname unzip xclip
   yay -S --needed google-chrome
 
 - Install additional packages:
