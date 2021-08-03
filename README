@@ -68,7 +68,7 @@ Type=simple
 
 - Install DEV packages:
   sudo pacman -S --needed gcc gdb clang rustup
-  yay -S --needed visual-studio-code-bin clion
+  yay -S --needed visual-studio-code-bin clion neovim
 
 - For clion we need to download JDK 11 (new versions did not work because of Java AWT support)
   sudo pacman -S jdk11-openjdk
@@ -77,6 +77,11 @@ Type=simple
 - For rust we need to setup toolchain: (and download std lib for clion)
   rustup toolchain install stable 
   rustup component add rust-src
+
+- For neovim download config repo:
+  git clone ssh://git@github.com:natanaeljr/vimrc.git --branch=develop 
+  Start nvim and run :PlugInstall, then go through :checkhealth
+  TODO: document additional packages for neovim
 
 #### For using VPNs (openvpn) 
   - Add openvpn config (TODO document/record)
