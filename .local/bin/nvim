@@ -1,4 +1,3 @@
 #!/bin/zsh
 
-echo hi
-VIMINIT= /usr/bin/nvim
+VIMINIT= /usr/bin/nvim "$@"
