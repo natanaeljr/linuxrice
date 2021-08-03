@@ -1,0 +1,10 @@
+#!/bin/sh
+
+if [ "$1" = "-r" ]; then
+  random-bg
+elif [ -f ~/.fehbg ]; then
+  ~/.fehbg
+else
+  random-bg
+fi
+
