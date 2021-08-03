@@ -1,0 +1,5 @@
+#!/bin/zsh
+
+readonly xcache="${XDG_CACHE_HOME:-$HOME/.cache}/xrandr-args-cache"
+
+/usr/bin/xrandr $(< "$xcache")
