@@ -1,0 +1,4 @@
+#!/bin/zsh
+
+echo hi
+VIMINIT= /usr/bin/nvim
