@@ -22,8 +22,8 @@ def notifications(bus, message):
     app_name = args[0]
 
     if len(app_name) > 0:
-        summary = args[3].replace('\n', '. ')
-        body = args[4].replace('\n', '. ')
+        summary = args[3].replace('\n', '| ')
+        body = args[4].replace('\n', '| ')
 
         timestamp = time.strftime("%Y/%m/%d %H:%M")
 
