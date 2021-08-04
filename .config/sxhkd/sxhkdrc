@@ -18,3 +18,7 @@ alt + r
 # Random background (different for 2 monitors)
 alt + shift + r
   random-bg -2
+
+# Lock the screen immediatly
+alt + shift + l
+  xfce4-screensaver-command --lock
