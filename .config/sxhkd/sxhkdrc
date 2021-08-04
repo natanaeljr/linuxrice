@@ -17,5 +17,10 @@
 super + shift + backslash
   notify-send 'sxhkd keybinding test'
 
+# Random background (same across monitors)
 alt + r
-  random-bg
+  random-bg -1
+
+# Random background (different for 2 monitors)
+alt + shift + r
+  random-bg -2
