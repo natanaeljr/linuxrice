@@ -17,3 +17,5 @@
 super + shift + backslash
   notify-send 'sxhkd keybinding test'
 
+alt + r
+  random-bg
