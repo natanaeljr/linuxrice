@@ -34,7 +34,8 @@ After installed, on first boot:
 
 - Install additional packages:
   sudo pacman -S --needed xfce4-power-manager xfce4-screensaver xfce4-notifyd feh \
-  mesa-demos manjaro-settings-manager pamac tree network-manager-applet htop bpytop yad gnome-calculator
+  mesa-demos manjaro-settings-manager pamac tree network-manager-applet htop bpytop yad \
+  gnome-calculator dbus-python
   yay -S --needed lf redshift-qt 
 
 - Install font packages:
