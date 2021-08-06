@@ -19,6 +19,10 @@ alt + r
 alt + shift + r
   random-bg -2
 
-# Lock the screen immediatly
+# Lock screen immediately
 alt + shift + l
   xfce4-screensaver-command --lock
+
+# Suspend
+alt + shift + Delete
+  systemctl suspend
