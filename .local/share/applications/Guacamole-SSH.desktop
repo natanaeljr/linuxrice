@@ -1,7 +1,0 @@
-[Desktop Entry]
-Encoding=UTF-8
-Type=Application
-Exec=google-chrome-stable --app=https://srv-guacamole-ssh.datacom.net
-Name=Guacamole SSH
-Comment=Datacom Remote Server SSH
-Icon=/home/common/.local/share/applications/guacamole.png
