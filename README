@@ -33,7 +33,7 @@ After installed, on first boot:
   yay -S --needed google-chrome
 
 - Install additional packages:
-  sudo pacman -S --needed xfce4-power-manager xfce4-screensaver xfce4-notifyd feh \
+  sudo pacman -S --needed xfce4-power-manager xfce4-screensaver xfce4-notifyd notification-daemon feh \
   mesa-demos manjaro-settings-manager pamac tree network-manager-applet htop bpytop yad \
   gnome-calculator dbus-python
   yay -S --needed lf redshift-qt 
