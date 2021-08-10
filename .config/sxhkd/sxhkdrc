@@ -24,5 +24,5 @@ alt + shift + l
   xfce4-screensaver-command --lock
 
 # Suspend
-alt + shift + Delete
+alt + shift + End
   systemctl suspend
