@@ -54,9 +54,10 @@ syntax on
 if has("gui_running")
 colorscheme github
 set background=light
+set guifont=JetBrains\ Mono\ NL\ 14.0px
 set guioptions-=T           " Remove toolbar
 set guioptions-=m           " Remove menubar
-set guifont=JetBrains\ Mono\ NL\ 14.0px
+set guicursor+=a:blinkon0   " Disable cursor blinking
 else
 
 " Terminal scheme
