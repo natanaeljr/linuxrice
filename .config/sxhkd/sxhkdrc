@@ -30,3 +30,7 @@ alt + shift + End
 # Application Laucher
 alt + d
   rofi-launcher
+
+# Open Notification Center sidepanel
+alt + n
+  notification-center-toogle
