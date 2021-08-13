@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Bpytop
+GenericName=System Monitor
+Exec=kdocker -q -o alacritty -e bpytop
+Terminal=false

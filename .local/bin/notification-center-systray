@@ -1,0 +1,3 @@
+#!/bin/sh
+
+yad --notification --text="Notifications" --image="mail-unread" --command "notification-center-toogle"
