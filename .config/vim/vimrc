@@ -49,14 +49,21 @@ set wildoptions=tagfile     " Use Ctrl+D to list matching tags
 " Syntax Highlight
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 syntax on
-colorscheme slate
 
+" GUI scheme
 if has("gui_running")
+colorscheme github
+set background=light
 set guioptions-=T           " Remove toolbar
 set guioptions-=m           " Remove menubar
-set guifont=SF\ Mono\ 11
-set background=light
-colorscheme github
+set guifont=JetBrains\ Mono\ NL\ 14.0px
+else
+
+" Terminal scheme
+colorscheme gruvbox
+set background=dark
+" remove background color
+hi Normal guibg=NONE ctermbg=NONE
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
