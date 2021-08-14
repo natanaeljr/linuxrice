@@ -7,10 +7,6 @@
 # If sxhkd receives a SIGUSR1 signal, it will reload its configuration file.
 #
 
-# Test keybinding
-super + shift + backslash
-  notify-send 'sxhkd keybinding test'
-
 # Random background (same across monitors)
 alt + r
   random-bg -1
@@ -20,11 +16,11 @@ alt + shift + r
   random-bg -2
 
 # Lock screen immediately
-alt + shift + l
+alt + ctrl + l
   xfce4-screensaver-command --lock
 
 # Suspend
-alt + shift + End
+alt + ctrl + End
   systemctl suspend
 
 # Application Laucher
