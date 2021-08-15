@@ -36,7 +36,7 @@ After installed, on first boot:
   sudo pacman -S --needed xfce4-power-manager xfce4-screensaver xfce4-notifyd notification-daemon feh \
    mesa-demos manjaro-settings-manager pamac tree network-manager-applet htop bpytop yad \
    gnome-calculator dbus-python
-  yay -S --needed lf redshift-qt kdocker
+  yay -S --needed lf redshift-qt kdocker deadd-notification-center-bin
 
 - Install font packages:
   sudo pacman -S --needed noto-fonts ttf-jetbrains-mono nerd-fonts-noto-sans-mono
