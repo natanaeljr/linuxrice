@@ -16,5 +16,5 @@ redshift-qt &                             # adjust color temperature for night
 xfce4-power-manager &                     # power manager
 xfce4-screensaver &                       # screensaver and locker
 deadd-notification-center&                # notification daemon
-notification-systray &                    # notification icon on systray
+notification-center-systray &             # notification indicator on systray
 notification-monitor &                    # notification logger to /tmp/notifications.log
