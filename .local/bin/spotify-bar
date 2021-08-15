@@ -2,7 +2,7 @@
 
 # Spotify status bar
 
-readonly maxlen=40
+readonly maxlen=30
 readonly cache=/tmp/spotify-bar-cache
 readonly updating=/tmp/spotify-bar-updating
 
