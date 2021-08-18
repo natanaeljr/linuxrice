@@ -4,6 +4,8 @@
 "  \ V /| | | | | | | | | (__ 
 "   \_/ |_|_| |_| |_|_|  \___|
 " ============================
+"
+" Keep it simple. And no plugins!
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Environment (ref: https://tlvince.com/vim-respect-xdg)
@@ -50,7 +52,7 @@ set wildoptions=tagfile     " Use Ctrl+D to list matching tags
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 syntax on
 
-" GUI scheme
+" GUI scheme "
 if has("gui_running")
 colorscheme github
 set background=light
@@ -60,11 +62,10 @@ set guioptions-=m           " Remove menubar
 set guicursor+=a:blinkon0   " Disable cursor blinking
 else
 
-" Terminal scheme
+" Terminal scheme "
 colorscheme gruvbox
 set background=dark
-" remove background color
-hi Normal guibg=NONE ctermbg=NONE
+hi Normal guibg=NONE ctermbg=NONE   " Remove background color
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
