@@ -725,7 +725,7 @@ background_opacity: 0.85
 #
 # If the same trigger is assigned to multiple actions, all of them are executed
 # in the order they were defined in.
-#key_bindings:
+key_bindings:
   #- { key: Paste,                                       action: Paste          }
   #- { key: Copy,                                        action: Copy           }
   #- { key: L,         mods: Control,                    action: ClearLogNotice }
@@ -766,9 +766,9 @@ background_opacity: 0.85
   #- { key: Down,                        mode: Vi|~Search, action: Down                    }
   #- { key: Left,                        mode: Vi|~Search, action: Left                    }
   #- { key: Right,                       mode: Vi|~Search, action: Right                   }
-  #- { key: Key0,                        mode: Vi|~Search, action: First                   }
-  #- { key: Key4,   mods: Shift,         mode: Vi|~Search, action: Last                    }
-  #- { key: Key6,   mods: Shift,         mode: Vi|~Search, action: FirstOccupied           }
+  - { key: 0,                           mode: Vi|~Search, action: First                   }
+  - { key: 5,      mods: Shift,         mode: Vi|~Search, action: Last                    }
+  - { key: 7,      mods: Shift,         mode: Vi|~Search, action: FirstOccupied           }
   #- { key: H,      mods: Shift,         mode: Vi|~Search, action: High                    }
   #- { key: M,      mods: Shift,         mode: Vi|~Search, action: Middle                  }
   #- { key: L,      mods: Shift,         mode: Vi|~Search, action: Low                     }
@@ -778,7 +778,7 @@ background_opacity: 0.85
   #- { key: B,      mods: Shift,         mode: Vi|~Search, action: WordLeft                }
   #- { key: W,      mods: Shift,         mode: Vi|~Search, action: WordRight               }
   #- { key: E,      mods: Shift,         mode: Vi|~Search, action: WordRightEnd            }
-  #- { key: Key5,   mods: Shift,         mode: Vi|~Search, action: Bracket                 }
+  - { key: 6,      mods: Shift,         mode: Vi|~Search, action: Bracket                 }
   #- { key: Slash,                       mode: Vi|~Search, action: SearchForward           }
   #- { key: Slash,  mods: Shift,         mode: Vi|~Search, action: SearchBackward          }
   #- { key: N,                           mode: Vi|~Search, action: SearchNext              }
