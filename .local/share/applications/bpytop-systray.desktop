@@ -2,5 +2,5 @@
 Type=Application
 Name=Bpytop
 GenericName=System Monitor
-Exec=kdocker -q -o alacritty -e bpytop
+Exec=kdocker -q -m -o -i /usr/share/icons/Papirus/16x16/panel/indicator-virtual-box.svg alacritty -e bpytop
 Terminal=false
