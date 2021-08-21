@@ -54,8 +54,8 @@ syntax on
 
 " GUI scheme "
 if has("gui_running")
-colorscheme github
-set background=light
+colorscheme gruvbox
+set background=dark
 set guifont=JetBrains\ Mono\ NL\ 14.0px
 set guioptions-=T           " Remove toolbar
 set guioptions-=m           " Remove menubar
