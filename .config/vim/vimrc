@@ -59,6 +59,7 @@ set background=dark
 set guifont=JetBrains\ Mono\ NL\ 14.0px
 set guioptions-=T           " Remove toolbar
 set guioptions-=m           " Remove menubar
+set guioptions-=l           " Remove left-hand scrollbar
 set guioptions-=r           " Remove right-hand scrollbar
 set guicursor+=a:blinkon0   " Disable cursor blinking
 else
