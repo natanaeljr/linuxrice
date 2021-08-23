@@ -85,35 +85,5 @@ set tags=./tags;
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Sessions
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-function! MakeSession()
-  if g:sessionfile != ""
-    echo "Saving."
-    if (filewritable(g:sessiondir) != 2)
-      exe 'silent !mkdir -p ' g:sessiondir
-      redraw!
-    endif
-    exe "mksession! " . g:sessionfile
-  endif
-endfunction
-
-function! LoadSession()
-  if argc() == 0
-    let g:sessiondir = $XDG_CACHE_HOME . "/vim/sessions" . getcwd()
-    let g:sessionfile = g:sessiondir . "/session.vim"
-    if (filereadable(g:sessionfile))
-      exe 'source ' g:sessionfile
-      if has("gui_running")
-        exec 'set background=light'
-      else
-        exec 'set background=dark'
-        exec 'hi Normal guibg=NONE ctermbg=NONE'
-      endif
-    endif
-  else
-    let g:sessionfile = ""
-    let g:sessiondir = ""
-  endif
-endfunction
-
-au VimEnter * nested :call LoadSession()
-au VimLeave * :call MakeSession()
+au VimEnter * nested :call session#Load()
+au VimLeave * :call session#Make()
