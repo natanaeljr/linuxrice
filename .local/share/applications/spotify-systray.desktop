@@ -1,0 +1,12 @@
+# from https://github.com/v1nns/dotfiles/blob/main/.local/share/applications/spotify.desktop
+[Desktop Entry]
+Type=Application
+Name=Spotify on Systray
+GenericName=Music Player
+Icon=spotify-client
+TryExec=spotify
+Exec=kdocker -q -m -o -i /usr/share/icons/Papirus/16x16/apps/spotify.svg -n Spotify spotify %U
+Terminal=false
+MimeType=x-scheme-handler/spotify;
+Categories=Audio;Music;Player;AudioVideo;
+StartupWMClass=spotify
