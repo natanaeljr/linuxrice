@@ -5,7 +5,9 @@
 "   \_/ |_|_| |_| |_|_|  \___|
 " ============================
 "
-" Keep it simple. And no plugins!
+" Keep it simple.
+" No plugins.
+" Default key mappings.
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Environment (ref: https://tlvince.com/vim-respect-xdg)
@@ -85,5 +87,5 @@ set tags=./tags;
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Sessions
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-au VimEnter * nested :call session#Load()
-au VimLeave * :call session#Make()
+autocmd VimEnter * nested :call session#Load()
+autocmd VimLeave * :call session#Make()
