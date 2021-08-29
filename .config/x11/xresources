@@ -1,0 +1,5 @@
+Xcursor.theme: xcursor-breeze-snow
+
+URxvt.font: xft:SF Mono:pixelsize=13
+
+# vim: ft=xdefaults
