@@ -10,7 +10,7 @@ xset r rate 220 38                        # speed up key repeat rate
 xrdb ${XDG_CONFIG_HOME:-$HOME/.config}/x11/xresources &
 sxhkd &                                   # simple x hotkey daemon
 picom -b                                  # window compositor
-unclutter --timeout=10 &                  # remove mouse when idle
+unclutter --timeout=15 &                  # remove mouse when idle
 nm-applet &                               # network manager applet
 pasystray &                               # volume control for pusleaudio
 redshift-qt &                             # adjust color temperature for night
