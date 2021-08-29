@@ -13,9 +13,9 @@ if [ $length -gt $maxlen ]; then
   status="${status:0:$maxlen}…"
 fi
 if [ $length -gt 0 ]; then
-  printf "[%s]\n" "$status"
+  printf "%s\n" "$status"
 else
-  echo [spotify]
+  echo spotify
 fi
 
 case $BUTTON in
