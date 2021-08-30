@@ -2,6 +2,8 @@
 
 .blurredBG, #main_window, .blurredBG.low, .blurredBG.normal {
     background: rgba(255, 255, 255, 1.0);
+    border-radius: 8px;
+    border: 1pt #282828 solid;
 }
 
 .noti-center.time {
