@@ -15,7 +15,7 @@ fi
 if [ $length -gt 0 ]; then
   printf "%s\n" "$status"
 else
-  echo spotify
+  echo 📻 spotify
 fi
 
 case $BUTTON in
