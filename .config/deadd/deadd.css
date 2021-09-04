@@ -1,9 +1,9 @@
 /* Notification center */
 
 .blurredBG, #main_window, .blurredBG.low, .blurredBG.normal {
-    background: rgba(255, 255, 255, 1.0);
+    background: rgba(40, 40, 40, 1.0);
     border-radius: 8px;
-    border: 1pt #282828 solid;
+    border: 1pt #444444 solid;
 }
 
 .noti-center.time {
@@ -26,7 +26,7 @@
 }
 
 .blurredBG.notification {
-    background:  rgba(255, 255, 255, 0.9);
+    background:  rgba(40, 40, 40, 0.9);
 }
 
 .blurredBG.notification.critical {
@@ -40,18 +40,18 @@
 /* Labels */
 
 label {
-    color: #322;
+    color: rgba(255, 255, 255, 1.0);
 }
 
 label.notification {
-    color: #322;
+    color: rgba(255, 255, 255, 1.0);
 }
 
 label.critical {
-    color: #000;
+    color: rgba(255, 255, 255, 1.0);
 }
 .notificationInCenter label.critical {
-    color: #000;
+    color: rgba(255, 255, 255, 1.0);
 }
 
 
