@@ -17,12 +17,12 @@ function! session#Load()
     let g:sessionfile = g:sessiondir . "/session.vim"
     if (filereadable(g:sessionfile))
       exe 'source ' g:sessionfile
-      if has("gui_running")
-        exec 'set background=light'
-      else
+      "if has("gui_running")
+      "  exec 'set background=light'
+      "else
         exec 'set background=dark'
-        exec 'hi Normal guibg=NONE ctermbg=NONE'
-      endif
+        exec 'hi Normal ctermbg=NONE'
+      "endif
     endif
   else
     let g:sessionfile = ""
