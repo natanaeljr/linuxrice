@@ -30,3 +30,7 @@ alt + d
 # Open Notification Center sidepanel
 alt + n
   notification-center-toogle
+
+# Alternate terminal
+super + alt + Return
+  termite
