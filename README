@@ -57,7 +57,7 @@ Type=simple
 - Change GRUB Timeout: sudo vim /etc/default/grub; edit GRUB_TIMEOUT=1; sudo update-grub
 
 - Install audio packages:
-  sudo pacman -S --needed pulseaudio pulseaudio-alsa pavucontrol pasystray
+  sudo pacman -S --needed pulseaudio pulseaudio-alsa pavucontrol pasystray playerctl
   And start/enable with: systemctl --user enable pulseaudio
 
 - Install more customization packages:
