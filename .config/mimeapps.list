@@ -1,8 +1,14 @@
 
 [Default Applications]
-text/html=google-chrome.desktop
 x-scheme-handler/http=google-chrome.desktop
 x-scheme-handler/https=google-chrome.desktop
 x-scheme-handler/about=google-chrome.desktop
 x-scheme-handler/unknown=google-chrome.desktop
 x-scheme-handler/webcal=google-chrome.desktop
+text/html=google-chrome.desktop
+text/plain=gvim.desktop
+application/pdf=org.gnome.Evince-previewer.desktop
+image/png=feh.desktop;
+image/jpeg=feh.desktop;
+image/gif=feh.desktop;
+inode/directory=nemo.desktop
