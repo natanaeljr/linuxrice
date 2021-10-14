@@ -1,0 +1,9 @@
+#!/bin/zsh
+
+[ $# -eq 0 ] && ( echo "no arguments" >2; exit 1 )
+
+$@
+RET=$?
+
+notify-send "$*" "$(printf "Execution %s" $([ $RET -eq 0 ] && echo "SUCCESS" || echo "FAILURE" ))"
+
