@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Btop
+GenericName=System Monitor
+Exec=kdocker -q -m -o -i /usr/share/icons/Papirus/16x16/panel/indicator-virtual-box.svg alacritty -e btop
+Terminal=false
