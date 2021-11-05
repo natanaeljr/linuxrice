@@ -5,6 +5,7 @@
 readonly maxlen=25
 readonly cache=/tmp/spotify-bar-cache
 readonly updating=/tmp/spotify-bar-updating
+readonly format="%t - %a"
 
 status="$(cut -b-$maxlen $cache)"
 length="$(wc -c $cache)"
@@ -15,17 +16,17 @@ fi
 if [ $length -gt 0 ]; then
   printf "%s\n" "$status"
 else
-  echo music
+  echo ""
 fi
 
 case $BUTTON in
-  1) touch $updating; ( spt playback --previous --device Spotifyd@ryzenix > "$cache" && pkill -RTMIN+$SIGNAL dwmblocks ) & ;;
-  2) touch $updating; ( spt playback --toggle --device Spotifyd@ryzenix > "$cache" && pkill -RTMIN+$SIGNAL dwmblocks ) & ;;
-  3) touch $updating; ( spt playback --next --device Spotifyd@ryzenix > "$cache" && pkill -RTMIN+$SIGNAL dwmblocks ) & ;;
+  1) touch $updating; ( spt playback --previous -f "$format" --device Spotifyd@ryzenix > "$cache" && pkill -RTMIN+$SIGNAL dwmblocks ) & ;;
+  2) touch $updating; ( spt playback --toggle -f "$format" --device Spotifyd@ryzenix > "$cache" && pkill -RTMIN+$SIGNAL dwmblocks ) & ;;
+  3) touch $updating; ( spt playback --next -f "$format" --device Spotifyd@ryzenix > "$cache" && pkill -RTMIN+$SIGNAL dwmblocks ) & ;;
   *) if [ -f $updating ]; then
        rm $updating
      else
-       touch $updating; ( spt playback --status > "$cache" && pkill -RTMIN+$SIGNAL dwmblocks ) &
+       touch $updating; ( spt playback --status -f "$format" > "$cache" && pkill -RTMIN+$SIGNAL dwmblocks ) &
      fi
      ;;
 esac
