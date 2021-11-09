@@ -65,6 +65,9 @@ Type=simple
   yay -S --needed zsh-fast-syntax-highlighting zsh-vi-mode
   sudo git clone https://github.com/urbainvaes/fzf-marks.git /opt/fzf-marks
 
+- Update tuxedo-control-center due to max cpu [issue](https://github.com/tuxedocomputers/tuxedo-control-center/issues/109)
+  yay -S --needed aur/tuxedo-control-center-bin
+
 #### For Development
 
 - Install DEV packages:
