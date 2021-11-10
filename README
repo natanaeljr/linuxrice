@@ -35,7 +35,7 @@ After installed, on first boot:
 - Install additional packages:
   sudo pacman -S --needed xfce4-power-manager xfce4-screensaver xfce4-notifyd notification-daemon feh \
    mesa-demos manjaro-settings-manager pamac tree network-manager-applet htop bpytop yad \
-   nemo gnome-calculator dbus-python xcursor-breeze
+   nemo gnome-calculator dbus-python xcursor-breeze xsetroot hsetroot
   yay -S --needed lf redshift-qt kdocker deadd-notification-center-bin
 
 - Install font packages:
