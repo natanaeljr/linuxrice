@@ -39,7 +39,7 @@ After installed, on first boot:
   yay -S --needed lf redshift-qt kdocker deadd-notification-center-bin
 
 - Install font packages:
-  sudo pacman -S --needed noto-fonts ttf-jetbrains-mono nerd-fonts-noto-sans-mono
+  sudo pacman -S --needed noto-fonts ttf-jetbrains-mono nerd-fonts-noto-sans-mono ttf-fira-code
 
 - Automatic start of the X server on tty1: add the following to ~/.zprofile: (# already setup in the dotfiles)
 if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
