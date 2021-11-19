@@ -42,6 +42,9 @@ set mouse=a                 " Enable mouse
 set ttimeoutlen=100         " Timeout on escape key codes (e.g: ^[O)
 set ttymouse=sgr            " Fix mouse for unknown terminal $TERM types
 
+" Restore cursor postion on file reopen
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Completion
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
