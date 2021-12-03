@@ -19,3 +19,4 @@ xfce4-screensaver &                       # screensaver and locker
 deadd-notification-center&                # notification daemon
 notification-center-systray &             # notification indicator on systray
 notification-monitor &                    # notification logger to /tmp/notifications.log
+solaar --window hide &                    # logitech devices manager
