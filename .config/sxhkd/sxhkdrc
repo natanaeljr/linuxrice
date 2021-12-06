@@ -34,3 +34,20 @@ alt + n
 # Alternate terminal
 super + alt + Return
   termite
+
+# Calculator
+XF86Calculator
+  gnome-calculator
+
+# Screenshot tool
+Print
+  gnome-screenshot --interactive
+
+# Volume Control
+XF86AudioRaiseVolume
+  pactl set-sink-volume @DEFAULT_SINK@ +5% && (pactl get-sink-volume @DEFAULT_SINK@ | grep -Eo '[0-9]+%' | xargs -L1 notify-send.py --replaces-process volumectl -t 2000 -u low Volume)
+XF86AudioLowerVolume
+  pactl set-sink-volume @DEFAULT_SINK@ -5% && (pactl get-sink-volume @DEFAULT_SINK@ | grep -Eo '[0-9]+%' | xargs -L1 notify-send.py --replaces-process volumectl -t 2000 -u low Volume)
+XF86AudioMute
+  pactl set-sink-mute @DEFAULT_SINK@ toggle && ((pactl get-sink-mute @DEFAULT_SINK@; pactl get-sink-volume @DEFAULT_SINK@ | grep -Eo '[0-9]+%' | head -1) | xargs -0 notify-send.py --replaces-process volumectl -t 2000 -u low Volume)
+
