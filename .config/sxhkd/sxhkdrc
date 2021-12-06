@@ -25,7 +25,11 @@ alt + ctrl + End
 
 # Application Laucher
 alt + d
-  rofi-launcher
+  ~/.config/rofi/bin/launcher_colorful
+
+# Application Laucher 2
+alt + shift + d
+  ~/.config/rofi/bin/launcher_misc
 
 # Open Notification Center sidepanel
 alt + n
