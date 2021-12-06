@@ -37,6 +37,7 @@ After installed, on first boot:
    mesa-demos manjaro-settings-manager pamac tree network-manager-applet htop bpytop yad \
    nemo gnome-calculator dbus-python xcursor-breeze xsetroot hsetroot tmux xsel unclutter
   yay -S --needed lf redshift-qt kdocker deadd-notification-center-bin tmux-bash-completion-git
+  pip install notify-send.py
 
 - Install font packages:
   sudo pacman -S --needed noto-fonts ttf-jetbrains-mono nerd-fonts-noto-sans-mono ttf-fira-code
