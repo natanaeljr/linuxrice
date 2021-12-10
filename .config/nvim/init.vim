@@ -71,7 +71,7 @@ set wildoptions=tagfile     " Use Ctrl+D to list matching tags
 syntax on
 colorscheme gruvbox
 set background=dark
-"hi Normal ctermbg=NONE guibg=NONE      " Remove background color
+hi Normal ctermbg=NONE guibg=NONE      " Remove background color
 
 set termguicolors
 highlight LspCxxHlSymType guifg=#56b6c2
