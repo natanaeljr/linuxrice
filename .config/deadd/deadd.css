@@ -83,7 +83,7 @@ button:hover {
 }
 
 .userbuttonlabel {
-    color: #222;
+    color: #eee;
     font-size: 12px;
 }
 
@@ -92,7 +92,7 @@ button:hover {
 }
 
 .userbuttonlabel:hover {
-    color: #111;
+    color: #fff;
 }
 
 button.buttonState1 {
@@ -108,7 +108,7 @@ button.buttonState1:hover {
 }
 
 .userbuttonlabel.buttonState1:hover {
-    color: #111;
+    color: #eee;
 }
 
 button.buttonState2 {
@@ -116,7 +116,7 @@ button.buttonState2 {
 }
 
 .userbuttonlabel.buttonState2 {
-    color: #111;
+    color: #eee;
 }
 
 button.buttonState2:hover {
@@ -124,7 +124,7 @@ button.buttonState2:hover {
 }
 
 .userbuttonlabel.buttonState2:hover {
-    color: #000;
+    color: #fff;
 }
 
 
