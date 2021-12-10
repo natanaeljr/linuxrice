@@ -66,14 +66,17 @@ set wildmode=longest,full   " Completion mode options
 set wildoptions=tagfile     " Use Ctrl+D to list matching tags
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Syntax Highlight
+" Highlighting & Theme
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 syntax on
 colorscheme gruvbox
 set background=dark
+set termguicolors
 hi Normal ctermbg=NONE guibg=NONE      " Remove background color
 
-set termguicolors
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Semantic Highlight
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 highlight LspCxxHlSymType guifg=#56b6c2
 highlight LspCxxHlSymStruct guifg=#56b6c2
 highlight LspCxxHlSymClass guifg=#56b6c2
@@ -94,24 +97,27 @@ set clipboard=unnamedplus   " Use X clipboard as main register
 set tags=./tags;
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Coc.nvim
+" Git
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" navigate chunks of current buffer
+" Navigate chunks of current buffer
 nmap [g <Plug>(coc-git-prevchunk)
 nmap ]g <Plug>(coc-git-nextchunk)
-" navigate conflicts of current buffer
+" Navigate conflicts of current buffer
 nmap [c <Plug>(coc-git-prevconflict)
 nmap ]c <Plug>(coc-git-nextconflict)
-" show chunk diff at current position
+" Show chunk diff at current position
 nmap gs <Plug>(coc-git-chunkinfo)
-" show commit contains current position
-"nmap gc <Plug>(coc-git-commit)
-" create text object for git chunks
+" Show commit contains current position
+nmap gc <Plug>(coc-git-commit)
+" Create text object for git chunks
 omap ig <Plug>(coc-git-chunk-inner)
 xmap ig <Plug>(coc-git-chunk-inner)
 omap ag <Plug>(coc-git-chunk-outer)
 xmap ag <Plug>(coc-git-chunk-outer)
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" LSP
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
 nmap <silent> [d <Plug>(coc-diagnostic-prev)
 nmap <silent> ]d <Plug>(coc-diagnostic-next)
