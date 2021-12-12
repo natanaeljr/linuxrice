@@ -4,7 +4,8 @@
 # If you use startx/xinit like a Chad, this file will also be sourced.
 
 xrandr-restore                            # restore monitors setup with xrandr
-hsetroot -solid black                     # set the background
+setbg                                     # restore the background
+#hsetroot -solid black                     # set the background solid
 setxkbmap us altgr-intl                   # keyboard layout
 xset r rate 220 38                        # speed up key repeat rate
 xrdb ${XDG_CONFIG_HOME:-$HOME/.config}/x11/xresources &
