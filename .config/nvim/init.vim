@@ -23,12 +23,16 @@ let mapleader="\<Space>"
 " Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin(stdpath('data') . '/plugged')
-Plug 'neoclide/coc.nvim', {'branch': 'release'} " Conquer of Completion: Nodejs extension manager
-Plug 'jackguo380/vim-lsp-cxx-highlight'         " C/C++/ObjC semantic highlighting
+Plug 'neoclide/coc.nvim', {'branch': 'release'}     " Conquer of Completion: Nodejs extension manager
+Plug 'jackguo380/vim-lsp-cxx-highlight'             " C/C++/ObjC semantic highlighting
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " Fuzzy Finder
+Plug 'junegunn/fzf.vim'                             " Needed for FZF previews
 call plug#end()
 
 " coc.nvim global extensions
-let g:coc_global_extensions = ['coc-json', 'coc-git', 'coc-ccls']
+let g:coc_global_extensions = ['coc-marketplace', 'coc-json', 'coc-git',
+  \ 'coc-ccls', 'coc-xml', 'coc-fzf-preview', 'coc-cmake', 'coc-explorer',
+  \ 'coc-rust-analyzer']
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Tab
@@ -50,7 +54,7 @@ set cursorline              " Highlight current line
 set hlsearch                " Highlight search matches
 set nowrap                  " Wrap/nowrap lines
 set number                  " Display line numbers
-"set number relativenumber   " Display line numbers relative to the cursor
+set number relativenumber   " Display line numbers relative to the cursor
 set mouse=a                 " Enable mouse
 set ttimeoutlen=100         " Timeout on escape key codes (e.g: ^[O)
 "set ttymouse=sgr            " Fix mouse for unknown terminal $TERM types
@@ -151,3 +155,29 @@ nmap <leader>rn <Plug>(coc-rename)
 xmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Explorer
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nmap <leader>e <Cmd>CocCommand explorer<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" fzf
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nmap <leader>f [fzf-p]
+xmap <leader>f [fzf-p]
+
+nnoremap <silent> [fzf-p]p     :<C-u>CocCommand fzf-preview.FromResources project_mru git<CR>
+nnoremap <silent> [fzf-p]gs    :<C-u>CocCommand fzf-preview.GitStatus<CR>
+nnoremap <silent> [fzf-p]ga    :<C-u>CocCommand fzf-preview.GitActions<CR>
+nnoremap <silent> [fzf-p]b     :<C-u>CocCommand fzf-preview.Buffers<CR>
+nnoremap <silent> [fzf-p]B     :<C-u>CocCommand fzf-preview.AllBuffers<CR>
+nnoremap <silent> [fzf-p]o     :<C-u>CocCommand fzf-preview.FromResources buffer project_mru<CR>
+nnoremap <silent> [fzf-p]<C-o> :<C-u>CocCommand fzf-preview.Jumps<CR>
+nnoremap <silent> [fzf-p]g;    :<C-u>CocCommand fzf-preview.Changes<CR>
+nnoremap <silent> [fzf-p]/     :<C-u>CocCommand fzf-preview.Lines --add-fzf-arg=--no-sort --add-fzf-arg=--query="'"<CR>
+nnoremap <silent> [fzf-p]*     :<C-u>CocCommand fzf-preview.Lines --add-fzf-arg=--no-sort --add-fzf-arg=--query="'<C-r>=expand('<cword>')<CR>"<CR>
+nnoremap          [fzf-p]gr    :<C-u>CocCommand fzf-preview.ProjectGrep<Space>
+xnoremap          [fzf-p]gr    "sy:CocCommand   fzf-preview.ProjectGrep<Space>-F<Space>"<C-r>=substitute(substitute(@s, '\n', '', 'g'), '/', '\\/', 'g')<CR>"
+nnoremap <silent> [fzf-p]t     :<C-u>CocCommand fzf-preview.BufferTags<CR>
+nnoremap <silent> [fzf-p]q     :<C-u>CocCommand fzf-preview.QuickFix<CR>
+nnoremap <silent> [fzf-p]l     :<C-u>CocCommand fzf-preview.LocationList<CR>
