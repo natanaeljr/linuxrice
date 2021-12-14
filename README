@@ -41,6 +41,7 @@ After installed, on first boot:
 
 - Install font packages:
   sudo pacman -S --needed noto-fonts ttf-jetbrains-mono nerd-fonts-noto-sans-mono ttf-fira-code
+  yay -S --needed ttf-google-sans
 
 - Automatic start of the X server on tty1: add the following to ~/.zprofile: (# already setup in the dotfiles)
 if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
