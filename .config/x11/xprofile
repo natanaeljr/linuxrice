@@ -17,6 +17,7 @@ pasystray &                               # volume control for pusleaudio
 redshift-qt &                             # adjust color temperature for night
 xfce4-power-manager &                     # power manager
 xfce4-screensaver &                       # screensaver and locker
-deadd-notification-center&                # notification daemon
-notification-center-systray &             # notification indicator on systray
+/usr/lib/notification-daemon-1.0/notification-daemon &
+#deadd-notification-center&                # notification daemon
+#notification-center-systray &             # notification indicator on systray
 notification-monitor &                    # notification logger to /tmp/notifications.log
