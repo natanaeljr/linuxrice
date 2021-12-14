@@ -30,9 +30,18 @@ Plug 'junegunn/fzf.vim'                             " Needed for FZF previews
 call plug#end()
 
 " coc.nvim global extensions
-let g:coc_global_extensions = ['coc-marketplace', 'coc-json', 'coc-git',
-  \ 'coc-ccls', 'coc-xml', 'coc-fzf-preview', 'coc-cmake', 'coc-explorer',
-  \ 'coc-rust-analyzer']
+let g:coc_global_extensions = [
+  \'coc-marketplace',
+  \'coc-json',
+  \'coc-git',
+  \'coc-ccls',
+  \'coc-xml',
+  \'coc-fzf-preview',
+  \'coc-cmake',
+  \'coc-explorer',
+  \'coc-rust-analyzer',
+  \'coc-lists',
+  \'coc-yank']
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Tab
@@ -58,6 +67,7 @@ set number relativenumber   " Display line numbers relative to the cursor
 set mouse=a                 " Enable mouse
 set ttimeoutlen=10          " Timeout on escape key codes (e.g: ^[O)
 "set ttymouse=sgr            " Fix mouse for unknown terminal $TERM types
+set hidden                  " Hide unsaved buffers
 
 " Restore cursor postion on file reopen
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
@@ -99,6 +109,14 @@ set clipboard=unnamedplus   " Use X clipboard as main register
 " Tags
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set tags=./tags;
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" coc-list & coc-yank
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" List buffers
+nnoremap <silent> <leader><tab>  :<C-u>CocList -A buffers<cr>
+" Paste with yank history
+nnoremap <silent> <leader>p  :<C-u>CocList -A --normal yank<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Git
@@ -155,13 +173,19 @@ nmap <leader>rn <Plug>(coc-rename)
 xmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
 
+" Outline
+nnoremap <silent> <leader>o  :<C-u>CocList -A outline<cr>
+
+" Workspace Symbols
+nnoremap <silent> <leader>s  :<C-u>CocList -A -I symbols<cr>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Explorer
+" File Explorer
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nmap <leader>e <Cmd>CocCommand explorer<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" fzf
+" Fuzzy Finder
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nmap <leader>f [fzf-p]
 xmap <leader>f [fzf-p]

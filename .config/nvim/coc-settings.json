@@ -1,4 +1,7 @@
 {
+  "list": {
+    "maxPreviewHeight": 20
+  },
   "languageserver": {
     "ccls": {
       "command": "ccls",
