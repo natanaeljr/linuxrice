@@ -79,7 +79,7 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set wildmenu                " Command-line completion enhanced mode
 set wildmode=longest,full   " Completion mode options
-set wildoptions=tagfile     " Use Ctrl+D to list matching tags
+set wildoptions=pum         " List completion options in a popupmenu
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Highlighting & Theme
@@ -116,7 +116,7 @@ set tags=./tags;
 " coc-list & coc-yank
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " List buffers
-nnoremap <silent> <leader><tab>  :<C-u>CocList -A buffers<cr>
+nnoremap <silent> <leader>b  :<C-u>CocList -A buffers<cr>
 " Paste with yank history
 nnoremap <silent> <leader>p  :<C-u>CocList -A --normal yank<cr>
 
@@ -143,6 +143,8 @@ nnoremap <silent>    <A-9> :BufferLast<CR>
 nnoremap <silent>    <A-p> :BufferPin<CR>
 " Close buffer
 nnoremap <silent>    <A-c> :BufferClose<CR>
+" List buffers
+nnoremap <silent> <leader><tab> :BufferClose<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Git
