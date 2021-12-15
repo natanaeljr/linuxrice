@@ -208,7 +208,10 @@ nnoremap <silent> <leader>s  :<C-u>CocList -A -I symbols<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " File Explorer
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nmap <leader>e <Cmd>CocCommand explorer<CR>
+" Open explorer
+nmap <leader>ee <Cmd>CocCommand explorer<CR>
+" Reveal to current buffer for closest coc-explorer
+nmap <Leader>er <Cmd>call CocAction('runCommand', 'explorer.doAction', 'closest', ['reveal:0'], [['relative', 0, 'file']])<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Fuzzy Finder
