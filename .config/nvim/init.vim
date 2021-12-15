@@ -27,6 +27,8 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}     " Conquer of Completion: Nod
 Plug 'jackguo380/vim-lsp-cxx-highlight'             " C/C++/ObjC semantic highlighting
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " Fuzzy Finder
 Plug 'junegunn/fzf.vim'                             " Needed for FZF previews
+Plug 'kyazdani42/nvim-web-devicons'                 " File Type Icons
+Plug 'romgrk/barbar.nvim'                           " Tabline plugin
 call plug#end()
 
 " coc.nvim global extensions
@@ -117,6 +119,30 @@ set tags=./tags;
 nnoremap <silent> <leader><tab>  :<C-u>CocList -A buffers<cr>
 " Paste with yank history
 nnoremap <silent> <leader>p  :<C-u>CocList -A --normal yank<cr>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Buffers
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Move to previous/next
+nnoremap <silent>    <A-,> :BufferPrevious<CR>
+nnoremap <silent>    <A-.> :BufferNext<CR>
+" Re-order to previous/next
+nnoremap <silent>    <A-<> :BufferMovePrevious<CR>
+nnoremap <silent>    <A->> :BufferMoveNext<CR>
+" Goto buffer in position...
+nnoremap <silent>    <A-1> :BufferGoto 1<CR>
+nnoremap <silent>    <A-2> :BufferGoto 2<CR>
+nnoremap <silent>    <A-3> :BufferGoto 3<CR>
+nnoremap <silent>    <A-4> :BufferGoto 4<CR>
+nnoremap <silent>    <A-5> :BufferGoto 5<CR>
+nnoremap <silent>    <A-6> :BufferGoto 6<CR>
+nnoremap <silent>    <A-7> :BufferGoto 7<CR>
+nnoremap <silent>    <A-8> :BufferGoto 8<CR>
+nnoremap <silent>    <A-9> :BufferLast<CR>
+" Pin/unpin buffer
+nnoremap <silent>    <A-p> :BufferPin<CR>
+" Close buffer
+nnoremap <silent>    <A-c> :BufferClose<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Git
