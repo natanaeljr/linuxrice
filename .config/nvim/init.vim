@@ -198,8 +198,8 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 nmap <leader>rn <Plug>(coc-rename)
 
 " Formatting selected code.
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
+xmap <leader>;  <Plug>(coc-format-selected)
+nmap <leader>;  <Plug>(coc-format-selected)
 
 " Outline
 nnoremap <silent> <leader>o  :<C-u>CocList -A outline<cr>
