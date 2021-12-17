@@ -144,7 +144,7 @@ nnoremap <silent>    <A-p> :BufferPin<CR>
 " Close buffer
 nnoremap <silent>    <A-c> :BufferClose<CR>
 " List buffers
-nnoremap <silent> <leader><tab> :BufferClose<CR>
+nnoremap <silent> <leader><tab> :Buffers<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Git

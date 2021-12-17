@@ -21,5 +21,8 @@
           "highlight": { "lsRanges" : true }
         }
     }
+  },
+  "yank": {
+    "highlight": { "duration": 160 }
   }
 }
