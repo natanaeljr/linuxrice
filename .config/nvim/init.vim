@@ -26,7 +26,7 @@ call plug#begin(stdpath('data') . '/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}     " Conquer of Completion: Nodejs extension manager
 Plug 'jackguo380/vim-lsp-cxx-highlight'             " C/C++/ObjC semantic highlighting
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " Fuzzy Finder
-Plug 'junegunn/fzf.vim'                             " Needed for FZF previews
+Plug 'junegunn/fzf.vim'                             " FZF preview
 Plug 'kyazdani42/nvim-web-devicons'                 " File Type Icons
 Plug 'romgrk/barbar.nvim'                           " Tabline plugin
 call plug#end()
@@ -43,7 +43,8 @@ let g:coc_global_extensions = [
   \'coc-explorer',
   \'coc-rust-analyzer',
   \'coc-lists',
-  \'coc-yank']
+  \'coc-yank'
+  \]
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Tab
@@ -119,6 +120,14 @@ set tags=./tags;
 nnoremap <silent> <leader>b  :<C-u>CocList -A buffers<cr>
 " Paste with yank history
 nnoremap <silent> <leader>p  :<C-u>CocList -A --normal yank<cr>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" File Explorer
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Open explorer
+nmap <leader>ee <Cmd>CocCommand explorer<CR>
+" Reveal to current buffer for closest coc-explorer
+nmap <Leader>er <Cmd>call CocAction('runCommand', 'explorer.doAction', 'closest', ['reveal:0'], [['relative', 0, 'file']])<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Buffers
@@ -206,14 +215,6 @@ nnoremap <silent> <leader>o  :<C-u>CocList -A outline<cr>
 
 " Workspace Symbols
 nnoremap <silent> <leader>s  :<C-u>CocList -A -I symbols<cr>
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" File Explorer
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Open explorer
-nmap <leader>ee <Cmd>CocCommand explorer<CR>
-" Reveal to current buffer for closest coc-explorer
-nmap <Leader>er <Cmd>call CocAction('runCommand', 'explorer.doAction', 'closest', ['reveal:0'], [['relative', 0, 'file']])<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Fuzzy Finder
