@@ -43,7 +43,8 @@ let g:coc_global_extensions = [
   \'coc-explorer',
   \'coc-rust-analyzer',
   \'coc-lists',
-  \'coc-yank'
+  \'coc-yank',
+  \'coc-cmake'
   \]
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
