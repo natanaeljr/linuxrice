@@ -6,8 +6,8 @@
 xrandr-restore                            # restore monitors setup with xrandr
 setbg                                     # restore the background
 #hsetroot -solid black                     # set the background solid
-setxkbmap us altgr-intl                   # keyboard layout
-xset r rate 220 38                        # speed up key repeat rate
+(sleep 3; setxkbmap us altgr-intl) &      # keyboard layout
+(sleep 3; xset r rate 220 38) &           # speed up key repeat rate
 xrdb ${XDG_CONFIG_HOME:-$HOME/.config}/x11/xresources &
 sxhkd &                                   # simple x hotkey daemon
 picom -b                                  # window compositor
@@ -17,6 +17,7 @@ pasystray &                               # volume control for pusleaudio
 redshift-qt &                             # adjust color temperature for night
 xfce4-power-manager &                     # power manager
 xfce4-screensaver &                       # screensaver and locker
+blueman-applet &                          # bluetooth manager applet
 /usr/lib/notification-daemon-1.0/notification-daemon &
 #deadd-notification-center&                # notification daemon
 #notification-center-systray &             # notification indicator on systray

@@ -59,8 +59,24 @@ Type=simple
 - Change GRUB Timeout: sudo vim /etc/default/grub; edit GRUB_TIMEOUT=1; sudo update-grub
 
 - Install audio packages:
-  sudo pacman -S --needed pulseaudio pulseaudio-alsa pavucontrol pasystray playerctl
-  And start/enable with: systemctl --user enable pulseaudio
+  Pulseaudio:
+    sudo pacman -S --needed pulseaudio pulseaudio-alsa pavucontrol pasystray playerctl
+    And start/enable with: systemctl --user enable pulseaudio
+  Pipewire:
+    sudo pacman -S --needed pipewire-pulse pipewire-alsa
+    And start/enable with: systemctl --user enable pipewire
+
+- Install bluetooth packages:
+  sudo pacman -S --needed bluez bluez-utils blueman
+  And start/enable with: systemctl enable bluetooth.service
+  If using pulseaudio install:
+    sudo pacman -S --needed pulseaudio-bluetooth
+  If using pipewire, no additional package is needed.
+  Enable battery level reporting with pipewire:
+    sudo systemctl edit bluetooth.service
+    [Service]
+    ExecStart=
+    ExecStart=/usr/lib/bluetooth/bluetoothd --experimental
 
 - Install more customization packages:
   sudo pacman -S --needed oh-my-zsh zsh-theme-powerlevel10k zsh-autosuggestions fzf
