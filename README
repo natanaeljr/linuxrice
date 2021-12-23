@@ -60,11 +60,13 @@ Type=simple
 
 - Install audio packages:
   Pulseaudio:
-    sudo pacman -S --needed pulseaudio pulseaudio-alsa pavucontrol pasystray playerctl
+    sudo pacman -S --needed pulseaudio pulseaudio-alsa
     And start/enable with: systemctl --user enable pulseaudio
   Pipewire:
     sudo pacman -S --needed pipewire-pulse pipewire-alsa
     And start/enable with: systemctl --user enable pipewire
+  Additional packages:
+    sudo pacman -S --needed pavucontrol pasystray playerctl
 
 - Install bluetooth packages:
   sudo pacman -S --needed bluez bluez-utils blueman
