@@ -77,6 +77,7 @@ Type=simple
     [Service]
     ExecStart=
     ExecStart=/usr/lib/bluetooth/bluetoothd --experimental
+  See battery level with `upower --dump`.
 
 - Install more customization packages:
   sudo pacman -S --needed oh-my-zsh zsh-theme-powerlevel10k zsh-autosuggestions fzf
