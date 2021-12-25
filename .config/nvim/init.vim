@@ -36,7 +36,7 @@ let g:coc_global_extensions = [
   \'coc-marketplace',
   \'coc-json',
   \'coc-git',
-  \'coc-ccls',
+  \'coc-ccls',  " fix: https://github.com/neoclide/coc.nvim/issues/2088
   \'coc-xml',
   \'coc-fzf-preview',
   \'coc-cmake',
