@@ -167,6 +167,7 @@ nmap [c <Plug>(coc-git-prevconflict)
 nmap ]c <Plug>(coc-git-nextconflict)
 " Show chunk diff at current position
 nmap gs <Plug>(coc-git-chunkinfo)
+nmap gu :CocCommand git.chunkUndo<CR>
 " Show commit contains current position
 nmap gc <Plug>(coc-git-commit)
 " Create text object for git chunks
@@ -216,6 +217,9 @@ nnoremap <silent> <leader>o  :<C-u>CocList -A outline<cr>
 
 " Workspace Symbols
 nnoremap <silent> <leader>s  :<C-u>CocList -A -I symbols<cr>
+
+" Diagnostics Toogle
+nmap <Leader>td <Cmd>call CocAction('diagnosticToggle')<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Fuzzy Finder
