@@ -36,7 +36,7 @@ let g:coc_global_extensions = [
   \'coc-marketplace',
   \'coc-json',
   \'coc-git',
-  \'coc-ccls',  " fix: https://github.com/neoclide/coc.nvim/issues/2088
+  \'coc-ccls',
   \'coc-xml',
   \'coc-fzf-preview',
   \'coc-cmake',
@@ -46,6 +46,7 @@ let g:coc_global_extensions = [
   \'coc-yank',
   \'coc-cmake'
   \]
+" fix coc-ccls: https://github.com/neoclide/coc.nvim/issues/2088
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Tab
