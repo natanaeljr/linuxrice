@@ -73,6 +73,10 @@ set mouse=a                 " Enable mouse
 set ttimeoutlen=10          " Timeout on escape key codes (e.g: ^[O)
 "set ttymouse=sgr            " Fix mouse for unknown terminal $TERM types
 set hidden                  " Hide unsaved buffers
+set scrolloff=1             " Show at least one line above/below the cursor
+set sidescrolloff=1         " Show at least one line left/right of the cursor
+set list                    " Make whitespace characters visible
+set listchars=tab:»·,trail:• " Strings to use for showing whitespace characters
 
 " Restore cursor postion on file reopen
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
