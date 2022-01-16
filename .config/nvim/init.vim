@@ -91,8 +91,9 @@ set wildoptions=pum         " List completion options in a popupmenu
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Highlighting & Theme
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:rehash256 = 1
 syntax on
-colorscheme gruvbox
+colorscheme molokai
 set background=dark
 set termguicolors
 "hi Normal ctermbg=NONE guibg=NONE      " Remove background color
@@ -100,11 +101,11 @@ set termguicolors
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Semantic Highlight
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-highlight LspCxxHlSymType guifg=#56b6c2
-highlight LspCxxHlSymStruct guifg=#56b6c2
-highlight LspCxxHlSymClass guifg=#56b6c2
-highlight LspCxxHlSymTypeAlias guifg=#56b6c2
-highlight LspCxxHlSymEnum guifg=#56c2b0
+highlight LspCxxHlSymType guifg=#54ccb8
+highlight LspCxxHlSymStruct guifg=#54ccb8
+highlight LspCxxHlSymClass guifg=#54ccb8
+highlight LspCxxHlSymTypeAlias guifg=#54ccb8
+highlight LspCxxHlSymEnum guifg=#54ccb8
 highlight LspCxxHlSymEnumMember guifg=#d19a66
 highlight LspCxxHlSymMacro guifg=#d19a66
 highlight LspCxxHlSymNamespace guifg=#a9b2c3
