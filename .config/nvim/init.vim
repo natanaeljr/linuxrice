@@ -95,7 +95,7 @@ syntax on
 colorscheme gruvbox
 set background=dark
 set termguicolors
-hi Normal ctermbg=NONE guibg=NONE      " Remove background color
+"hi Normal ctermbg=NONE guibg=NONE      " Remove background color
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Semantic Highlight
