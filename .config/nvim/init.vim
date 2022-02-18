@@ -97,6 +97,7 @@ colorscheme gruvbox
 set background=dark
 set termguicolors
 hi Normal ctermbg=NONE guibg=NONE      " Remove background color
+nnoremap <silent> <Esc> :nohlsearch<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Semantic Highlight
