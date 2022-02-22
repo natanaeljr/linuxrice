@@ -93,11 +93,11 @@ set wildoptions=pum         " List completion options in a popupmenu
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:rehash256 = 1
 syntax on
-colorscheme gruvbox
+colorscheme edge
 set background=dark
 set termguicolors
-hi Normal ctermbg=NONE guibg=NONE      " Remove background color
-nnoremap <silent> <Esc> :nohlsearch<CR>
+"hi Normal ctermbg=NONE guibg=NONE      " Remove background color
+nnoremap <silent> <leader><Esc> :nohlsearch<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Semantic Highlight
