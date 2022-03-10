@@ -29,6 +29,8 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " Fuzzy Finder
 Plug 'junegunn/fzf.vim'                             " FZF preview
 Plug 'kyazdani42/nvim-web-devicons'                 " File Type Icons
 Plug 'romgrk/barbar.nvim'                           " Tabline plugin
+Plug 'preservim/nerdcommenter'                      " Comment functions plugin
+Plug 'tpope/vim-fugitive'                           " Git wrapper
 call plug#end()
 
 " coc.nvim global extensions
@@ -120,6 +122,24 @@ set clipboard=unnamedplus   " Use X clipboard as main register
 " Tags
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set tags=./tags;
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Session
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function Session()
+if filereadable("Session.vim")
+  exec "source Session.vim"
+else
+  exec "mksession"
+endif
+endfunction
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Comments
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+filetype plugin on
+nnoremap <silent> <C-_>  :call nerdcommenter#Comment('n', 'toggle')<CR>
+xnoremap <silent> <C-_>  :call nerdcommenter#Comment('x', 'toggle')<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " coc-list & coc-yank
