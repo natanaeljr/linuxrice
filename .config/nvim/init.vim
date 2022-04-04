@@ -203,6 +203,8 @@ xmap ig <Plug>(coc-git-chunk-inner)
 omap ag <Plug>(coc-git-chunk-outer)
 xmap ag <Plug>(coc-git-chunk-outer)
 
+nmap <silent> gf :Gdiffsplit<CR>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " LSP
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

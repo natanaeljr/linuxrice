@@ -5,6 +5,9 @@
   "explorer": {
     "icon": {
       "enableNerdfont": true
+    },
+    "keyMappings.global": {
+      "gt": "toggleOnlyGitChange"
     }
   },
   "languageserver": {
