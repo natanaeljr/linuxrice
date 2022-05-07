@@ -216,6 +216,8 @@ omap ag <Plug>(coc-git-chunk-outer)
 xmap ag <Plug>(coc-git-chunk-outer)
 
 nmap <silent> gf :Gdiffsplit<CR>
+nmap <silent> gvf :Gdiffsplit<CR>
+nmap <silent> ghf :Gdiffsplit<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " LSP
@@ -251,7 +253,7 @@ nmap <leader>rn <Plug>(coc-rename)
 
 " Formatting selected code.
 xmap <leader>;  <Plug>(coc-format-selected)
-nmap <leader>;  <Plug>(coc-format-selected)
+nmap <leader>;  <Plug>(coc-format)
 
 " Outline
 nnoremap <silent> <leader>o  :<C-u>CocList -A outline<cr>
