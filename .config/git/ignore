@@ -3,6 +3,7 @@
 .ccls-cache
 compile_commands.json
 Session.vim
+.nvimrc
 notes
 tags
 cscope.out
