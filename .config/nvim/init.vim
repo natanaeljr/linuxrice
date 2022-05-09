@@ -105,7 +105,6 @@ set wildoptions=pum         " List completion options in a popupmenu
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Highlighting & Theme
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:rehash256 = 1
 syntax on
 colorscheme edge
 set background=dark
