@@ -115,6 +115,7 @@ nnoremap <silent> <leader><Esc> :nohlsearch<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Semantic Highlight
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:lsp_cxx_hl_use_text_props = 1
 highlight LspCxxHlSymType guifg=#54ccb8
 highlight LspCxxHlSymStruct guifg=#54ccb8
 highlight LspCxxHlSymClass guifg=#54ccb8
