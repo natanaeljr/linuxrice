@@ -209,9 +209,10 @@ nmap ]g <Plug>(coc-git-nextchunk)
 " Navigate conflicts of current buffer
 nmap [c <Plug>(coc-git-prevconflict)
 nmap ]c <Plug>(coc-git-nextconflict)
-" Show chunk diff at current position
+" Chunk operations
 nmap gs <Plug>(coc-git-chunkinfo)
-nmap gu :CocCommand git.chunkUndo<CR>
+nmap <silent> gu :CocCommand git.chunkUndo<CR>
+nmap <silent> ga :CocCommand git.chunkStage<CR>
 " Show commit contains current position
 nmap gc <Plug>(coc-git-commit)
 " Create text object for git chunks
@@ -219,7 +220,7 @@ omap ig <Plug>(coc-git-chunk-inner)
 xmap ig <Plug>(coc-git-chunk-inner)
 omap ag <Plug>(coc-git-chunk-outer)
 xmap ag <Plug>(coc-git-chunk-outer)
-
+" Show git diff in a split window
 nmap <silent> gf :Gdiffsplit<CR>
 nmap <silent> gvf :Gdiffsplit<CR>
 nmap <silent> ghf :Gdiffsplit<CR>
