@@ -10,20 +10,33 @@
       "gt": "toggleOnlyGitChange"
     }
   },
+  "semanticTokens.filetypes": ["*"],
   "languageserver": {
-    "ccls": {
-      "command": "ccls",
+    "clangd": {
+      "command": "clangd",
+      "args": ["--background-index", "--clang-tidy", "--completion-style=bundled", "--header-insertion=iwyu"],
       "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"],
-      "rootPatterns": [".ccls", "compile_commands.json"],
+      "rootPatterns": ["compile_flags.txt", "compile_commands.json"],
       "initializationOptions": {
-          "cache": {
-            "directory": "/home/njr/.cache/ccls",
-            "retainInMemory": 0
-          },
-          "client": { "snippetSupport": true },
-          "highlight": { "lsRanges" : true }
-        }
+          "clandFileStatus": true,
+          "usePlaceholders": true,
+          "completeUnimported": true,
+          "semanticHighlighting": true
+      }
     }
+    //"ccls": {
+    //  "command": "ccls",
+    //  "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"],
+    //  "rootPatterns": [".ccls", "compile_commands.json"],
+    //  "initializationOptions": {
+    //      "cache": {
+    //        "directory": "/home/njr/.cache/ccls",
+    //        "retainInMemory": 0
+    //      },
+    //      "client": { "snippetSupport": true },
+    //      "highlight": { "lsRanges" : true }
+    //  }
+    //}
   },
   "yank": {
     "highlight": { "duration": 160 }

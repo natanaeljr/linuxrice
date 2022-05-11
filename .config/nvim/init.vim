@@ -39,6 +39,7 @@ let g:coc_global_extensions = [
   \'coc-json',
   \'coc-git',
   \'coc-ccls',
+  \'coc-clangd',
   \'coc-xml',
   \'coc-fzf-preview',
   \'coc-cmake',
@@ -115,6 +116,7 @@ nnoremap <silent> <leader><Esc> :nohlsearch<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Semantic Highlight
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim-lsp-cxx-highlight
 let g:lsp_cxx_hl_use_text_props = 1
 highlight LspCxxHlSymType guifg=#54ccb8
 highlight LspCxxHlSymStruct guifg=#54ccb8
@@ -123,7 +125,30 @@ highlight LspCxxHlSymTypeAlias guifg=#54ccb8
 highlight LspCxxHlSymEnum guifg=#54ccb8
 highlight LspCxxHlSymEnumMember guifg=#d19a66
 highlight LspCxxHlSymMacro guifg=#d19a66
-highlight LspCxxHlSymNamespace guifg=#a9b2c3
+highlight LspCxxHlSymNamespace guifg=#c3c5c9
+
+" coc-semantic-highlights
+let g:coc_default_semantic_highlight_groups=0
+highlight CocSemVariable guifg=#c3c5c9
+highlight CocSemParameter guifg=#c3c5c9
+highlight CocSemProperty guifg=#e6e8ed
+highlight CocSemClass guifg=#54ccb8
+highlight CocSemInterface guifg=#54ccb8
+highlight CocSemEnum guifg=#54ccb8
+highlight CocSemEnumMember guifg=#d19a66
+highlight CocSemType guifg=#54ccb8
+highlight CocSemNamespace guifg=#c3c5c9
+highlight CocSemTypeParameter guifg=#54ccb8
+highlight CocSemConcept guifg=#54ccb8
+highlight CocSemMacro guifg=#d19a66
+"highlight CocSemFunction
+"highlight CocSemMethod
+"highlight CocSemComment
+highlight CocSemUnknown guifg=#7F8490
+
+nmap <silent> ghi :CocCommand semanticTokens.inspect<CR>
+nmap <silent> ghr :CocCommand semanticTokens.refreshCurrent<CR>
+nmap <silent> ghc :CocCommand semanticTokens.checkCurrent<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Copy/Paste
@@ -222,8 +247,8 @@ omap ag <Plug>(coc-git-chunk-outer)
 xmap ag <Plug>(coc-git-chunk-outer)
 " Show git diff in a split window
 nmap <silent> gf :Gdiffsplit<CR>
-nmap <silent> gvf :Gdiffsplit<CR>
-nmap <silent> ghf :Gdiffsplit<CR>
+nmap <silent> gvf :Gvdiffsplit<CR>
+nmap <silent> ghf :Ghdiffsplit<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " LSP
