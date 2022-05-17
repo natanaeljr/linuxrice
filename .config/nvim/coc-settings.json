@@ -12,7 +12,7 @@
   },
   "semanticTokens.filetypes": ["*"],
   "languageserver": {
-    "clangd": {
+    "coc-clangd": {
       "command": "clangd",
       "args": ["--background-index", "--clang-tidy", "--completion-style=bundled", "--header-insertion=iwyu"],
       "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"],
