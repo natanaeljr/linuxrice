@@ -111,6 +111,22 @@ Type=simple
   - resolve the VPN DNS correctly run: $ sudo systemctl enable systemd-resolve 
   - add certificate: https://wiki.archlinux.org/index.php/User:Grawity/Adding_a_trusted_CA_certificate
 
+#### External monitor backlight control
+  ref: https://wiki.archlinux.org/title/backlight section "External monitors"
+  - sudo pacman -S ddcutil
+  - yay -S ddcci-driver-linux-dkms
+  Enable kernel i2c module
+  - sudo modprobe i2c-dev   #(load once)
+  Auto load kernel module on bootup:
+  - sudo echo 'i2c-dev' >> /etc/modules-load.d/backlight.conf
+  For enabling non-superuser access to the relevant I2C device
+  # groupadd i2c
+  # usermod -aG i2c $USER
+  # echo 'KERNEL=="i2c-[0-9]*", GROUP="i2c"' >> /etc/udev/rules.d/10-local_i2c_group.rules
+  Control:
+  - ddcutil setvcp 10 + 5 && ddcutil getvcp 10
+  
+
 #### Aditional software list:
   * spotifyd (enable user service)
   * spotify-tui (spotify in terminal)

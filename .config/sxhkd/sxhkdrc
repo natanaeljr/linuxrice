@@ -55,3 +55,12 @@ XF86AudioLowerVolume
 XF86AudioMute
   pactl set-sink-mute @DEFAULT_SINK@ toggle && ((pactl get-sink-mute @DEFAULT_SINK@; pactl get-sink-volume @DEFAULT_SINK@ | grep -Eo '[0-9]+%' | head -1) | xargs -0 notify-send.py --replaces-process volumectl -t 2000 -u low Volume)
 
+# Monitor Backlight Control
+XF86MonBrightnessUp
+  ddcutil setvcp 10 - 5 && (ddcutil getvcp 10 | grep -oP "current value =\s+\K\d+" | xargs -L1 notify-send -t 2000 -u low Backlight)
+F1
+  ddcutil setvcp 10 - 5 && (ddcutil getvcp 10 | grep -oP "current value =\s+\K\d+" | xargs -L1 notify-send -t 2000 -u low Backlight)
+XF86MonBrightnessDown
+  ddcutil setvcp 10 + 5 && (ddcutil getvcp 10 | grep -oP "current value =\s+\K\d+" | xargs -L1 notify-send -t 2000 -u low Backlight)
+F2
+  ddcutil setvcp 10 + 5 && (ddcutil getvcp 10 | grep -oP "current value =\s+\K\d+" | xargs -L1 notify-send -t 2000 -u low Backlight)
