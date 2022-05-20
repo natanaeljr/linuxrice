@@ -11,19 +11,21 @@
     }
   },
   "semanticTokens.filetypes": ["*"],
-  "languageserver": {
-    "coc-clangd": {
-      "command": "clangd",
-      "args": ["--background-index", "--clang-tidy", "--completion-style=bundled", "--header-insertion=iwyu"],
-      "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"],
-      "rootPatterns": ["compile_flags.txt", "compile_commands.json"],
-      "initializationOptions": {
-          "clandFileStatus": true,
-          "usePlaceholders": true,
-          "completeUnimported": true,
-          "semanticHighlighting": true
-      }
-    }
+  "clangd.enabled": true,
+  "clangd.arguments": ["--background-index", "--clang-tidy", "--completion-style=bundled", "--header-insertion=iwyu"],
+  //"languageserver": {
+    //"clangd": {
+    //  "command": "/usr/bin/clangd",
+    //  "args": ["--background-index", "--clang-tidy", "--completion-style=bundled", "--header-insertion=iwyu"],
+    //  "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"],
+    //  "rootPatterns": ["compile_flags.txt", "compile_commands.json"],
+    //  "initializationOptions": {
+    //      "clandFileStatus": true,
+    //      "usePlaceholders": true,
+    //      "completeUnimported": true,
+    //      "semanticHighlighting": true
+    //  }
+    //}
     //"ccls": {
     //  "command": "ccls",
     //  "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"],
@@ -37,7 +39,7 @@
     //      "highlight": { "lsRanges" : true }
     //  }
     //}
-  },
+  //},
   "yank": {
     "highlight": { "duration": 160 }
   }
