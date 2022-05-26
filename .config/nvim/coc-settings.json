@@ -12,7 +12,7 @@
   },
   "semanticTokens.filetypes": ["*"],
   "clangd.enabled": true,
-  "clangd.arguments": ["--background-index", "--clang-tidy", "--completion-style=bundled", "--header-insertion=iwyu"],
+  "clangd.arguments": ["-j=8", "--background-index", "--clang-tidy", "--completion-style=bundled", "--header-insertion=iwyu"],
   //"languageserver": {
     //"clangd": {
     //  "command": "/usr/bin/clangd",

@@ -1,37 +1,3 @@
-" =============================================================================
-" Filename: autoload/lightline/colorscheme/plastic.vim
-" Author: Florian Rand
-" License: MIT License
-" =============================================================================
-let s:foreground = [ '#a9b2c3', 235 ]
-let s:background = [ '#21252b', 235 ]
-let s:yellow = [ '#e5c07b', 180 ]
-let s:purple = [ '#af98e6', 170 ]
-let s:red = [ '#e06c75', 204 ]
-let s:blue = [ '#61afef', 39 ]
-let s:green = [ '#98c379', 114 ]
-let s:grey = [ '#abb2bf', 59 ]
-
-let s:p = {'normal': {}, 'inactive': {}, 'insert': {}, 'replace': {}, 'visual': {}, 'tabline': {}}
-let s:p.normal.left = [ [ s:foreground, s:background ], [ s:green, s:background ] ]
-let s:p.normal.right = [ [ s:purple, s:background ], [ s:green, s:background ] ]
-let s:p.inactive.right = [ [ s:grey, s:background ], [ s:grey, s:background ] ]
-let s:p.inactive.left =  [ [ s:grey, s:background ], [ s:grey, s:background ] ]
-let s:p.insert.left = [ [ s:background, s:green ], [ s:green, s:background ] ]
-let s:p.replace.left = [ [ s:red, s:background ], [ s:red, s:background ] ]
-let s:p.visual.left = [ [ s:background, s:purple ], [ s:purple, s:background ] ]
-let s:p.normal.middle = [ [ s:foreground, s:background ] ]
-let s:p.inactive.middle = [ [ s:grey, s:background ] ]
-let s:p.tabline.left = [ [ s:blue, s:grey ] ]
-let s:p.tabline.tabsel = [ [ s:foreground, s:background ] ]
-let s:p.tabline.middle = [ [ s:foreground, s:background ] ]
-let s:p.tabline.right = copy(s:p.normal.right)
-let s:p.normal.error = [ [ s:background, s:red ] ]
-let s:p.normal.warning = [ [ s:background, s:yellow ] ]
-
-" let g:lightline#colorscheme#plastic#palette = lightline#colorscheme#flatten(s:p)
-
-
 " Vim Color File
 " Name:         plastic.vim
 " Description:  VSCode Plastic theme vim/neovim port
@@ -82,9 +48,11 @@ let s:black = { 'gui': '#181a1f', 'cterm256': '234'}
 let s:visual_black = { 'gui': 'NONE', 'cterm256': 'NONE'}
 let s:background = {'gui': '#21252b', 'cterm256': '235'}
 let s:foreground = {'gui': '#a9b2c3', 'cterm256': '235'}
-let s:grey = { 'gui': '#abb2bf', 'cterm256': '59' }
+let s:grey = { 'gui': '#5e6673', 'cterm256': '246' }
 let s:punctuation = { 'gui': '#7c8696', 'cterm256': '238' }
 let s:none = {'gui': 'NONE', 'cterm256': 'NONE'}
+let s:bg_high = {'gui': '#272c33', 'cterm256': '236' }
+let s:bg_higher = {'gui': '#333942', 'cterm256': '236' }
 
 " }}}
 
@@ -98,16 +66,16 @@ call <sid>hi('Normal', s:white, s:background, 'none', {})
 call <sid>hi('Cursor', s:none, s:none, 'inverse', {})
 hi link lCursor Cursor
 hi link CursorIM Cursor
-call <sid>hi('CursorLine', s:white, s:none, 'bold', {})
+call <sid>hi('CursorLine', s:none, s:bg_high, 'none', {})
 call <sid>hi('EndOfBuffer', s:whisky, s:none, 'none', {})
 call <sid>hi('Conceal', s:blue, s:none, 'none', {})
 call <sid>hi('CursorColumn', s:none, s:blue, 'none', {})
 call <sid>hi('ColorColumn', s:none, s:punctuation, 'none', {})
-call <sid>hi('FoldColumn', s:punctuation, s:background, 'none', {})
-call <sid>hi('SignColumn', s:none, s:background, 'none', {})
-call <sid>hi('VertSplit', s:grey, s:background, 'none', {})
-call <sid>hi('LineNr', s:punctuation, s:background, 'none', {})
-call <sid>hi('CursorLineNr', s:punctuation, s:background, 'none', {})
+call <sid>hi('FoldColumn', s:punctuation, s:bg_high, 'none', {})
+call <sid>hi('SignColumn', s:none, s:bg_high, 'none', {})
+call <sid>hi('VertSplit', s:grey, s:bg_high, 'none', {})
+call <sid>hi('LineNr', s:punctuation, s:bg_high, 'none', {})
+call <sid>hi('CursorLineNr', s:foreground, s:bg_high, 'none', {})
 
 call <sid>hi('DiffAdd', s:black, s:green, 'none', {})
 call <sid>hi('DiffChange', s:black, s:purple, 'none', {})
@@ -143,14 +111,14 @@ call <sid>hi('StatusLineNC', s:white, s:background, 'none', {})
 hi link StatusLineTerm StatusLine
 hi link StatusLineTermNC StatusLineNC
 
-call <sid>hi('TabLine', s:white, s:black, 'none', {})
-hi link TabLineFill TabLine
-call <sid>hi('TabLineSel', s:whisky, s:black, 'none', {})
+call <sid>hi('TabLine', s:bg_high, s:background, 'none', {})
+call <sid>hi('TabLineFill', s:punctuation, s:background, 'none', {})
+call <sid>hi('TabLineSel', s:white, s:bg_high, 'none', {})
 
 call <sid>hi('Title', s:white, s:none, 'none', {})
-call <sid>hi('Visual', s:black, s:white, 'none', {})
+call <sid>hi('Visual', s:none, s:bg_higher, 'none', {})
 hi link VisualNOS Visual
-call <sid>hi('TabLine', s:white, s:black, 'none', {})
+call <sid>hi('TabLine', s:bg_high, s:background, 'none', {})
 call <sid>hi('WildMenu', s:black, s:white, 'bold', {})
 "}}}
 
@@ -159,7 +127,7 @@ call <sid>hi('WildMenu', s:black, s:white, 'bold', {})
 " http://vimdoc.sourceforge.net/htmldoc/syntax.html
 "----------------------------------------------------
 " {{{
-call <sid>hi('Comment', s:grey, s:none, 'italic', {})
+call <sid>hi('Comment', s:grey, s:none, 'none', {})
 
 call <sid>hi('Constant', s:aqua, s:none, 'none', {})
 call <sid>hi('String', s:green, s:none, 'none', {})
@@ -174,11 +142,17 @@ call <sid>hi('Function', s:whisky, s:none, 'none', {})
 call <sid>hi('Statement', s:whisky, s:none, 'none', {})
 hi link Conditional Statement
 
-call <sid>hi('PreProc', s:aqua, s:none, 'none', {})
+call <sid>hi('Operator', s:red, s:none, 'none', {})
+
+call <sid>hi('Keyword', s:red, s:none, 'none', {})
+
+call <sid>hi('PreProc', s:red, s:none, 'none', {})
 
 call <sid>hi('Type', s:blue, s:none, 'none', {})
 
 call <sid>hi('Special', s:aqua, s:none, 'none', {})
+
+hi link Delimiter Special
 
 call <sid>hi('Underlined', s:blue, s:none, 'underline', {})
 
@@ -186,7 +160,7 @@ call <sid>hi('Ignore', s:none, s:none, 'none', {})
 
 call <sid>hi('Error', s:red, s:black, 'undercurl', {})
 
-call <sid>hi('Todo', s:aqua, s:none, 'italic', {})
+call <sid>hi('Todo', s:grey, s:none, 'bold', {})
 
 "}}}
 
@@ -318,3 +292,8 @@ hi link typescriptDefault              typescriptImport
 " }}}
 
 " vim: fdm=marker ts=2 sts=2 sw=2 fdl=0:
+
+hi GitGutterAdd guifg=#a1bf78 guibg=#272c33 guisp=NONE gui=NONE cterm=NONE
+hi GitGutterChange guifg=#73b3e7 guibg=#272c33 guisp=NONE gui=NONE cterm=NONE
+hi GitGutterDelete guifg=#ed6161 guibg=#272c33 guisp=NONE gui=NONE cterm=NONE
+hi GitGutterChangeDelete guifg=#dbb774 guibg=#272c33 guisp=NONE gui=NONE cterm=NONE
