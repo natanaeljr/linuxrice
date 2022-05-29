@@ -4,8 +4,8 @@
 # If you use startx/xinit like a Chad, this file will also be sourced.
 
 xrandr-restore                            # restore monitors setup with xrandr
+hsetroot -solid black                     # set the background solid
 setbg                                     # restore the background
-#hsetroot -solid black                     # set the background solid
 (sleep 3; setxkbmap us altgr-intl) &      # keyboard layout
 (sleep 3; xset r rate 220 38) &           # speed up key repeat rate
 xrdb ${XDG_CONFIG_HOME:-$HOME/.config}/x11/xresources &
@@ -13,7 +13,7 @@ sxhkd &                                   # simple x hotkey daemon
 picom -b                                  # window compositor
 unclutter --timeout=15 &                  # remove mouse when idle
 nm-applet &                               # network manager applet
-pasystray &                               # volume control for pusleaudio
+pasystray &                               # volume control for pulseaudio
 redshift-qt &                             # adjust color temperature for night
 xfce4-power-manager &                     # power manager
 xfce4-screensaver &                       # screensaver and locker
