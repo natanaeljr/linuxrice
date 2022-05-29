@@ -131,6 +131,7 @@ highlight LspCxxHlSymNamespace guifg=#c3c5c9
 let g:coc_default_semantic_highlight_groups=0
 highlight CocSemVariable guifg=#c3c5c9
 highlight CocSemFileScopeVariable guifg=#89b6ff
+highlight CocSemGlobalScopeVariable guifg=#89b6ff
 highlight CocSemParameter guifg=#c3c5c9
 highlight CocSemProperty guifg=#e6e8ed
 highlight CocSemClass guifg=#54ccb8
