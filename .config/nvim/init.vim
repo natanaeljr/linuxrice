@@ -107,7 +107,7 @@ set wildoptions=pum         " List completion options in a popupmenu
 " Highlighting & Theme
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 syntax on
-colorscheme edge
+colorscheme gruvbox
 set background=dark
 set termguicolors
 "hi Normal ctermbg=NONE guibg=NONE      " Remove background color
