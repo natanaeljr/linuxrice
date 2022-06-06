@@ -39,6 +39,18 @@ source $ZSH/oh-my-zsh.sh
 # Generate completion files
 autoload -U compinit && compinit
 
+# Select tmux session to attach to with fzf
+function tmux_attach() {
+  local session=$(tmux ls | fzf --height=40% --reverse --border | cut -d: -f1) || return
+  zle reset-prompt
+  [ -z $session ] && return
+  BUFFER=""
+  LBUFFER="tmux attach -t ${session}${LBUFFER}"
+}
+
+# Make tmux_attach as widget
+zle -N tmux_attach
+
 # Bindkeys (wrapped in a function to run after zsh-vi-mode init)
 function bind_keys() {
   # vi mode
@@ -64,6 +76,9 @@ function bind_keys() {
 
   # Open fzf-marker for directory bookmarks
   bindkey '^k' fzm
+
+  # Select tmux session to attach
+  bindkey '^ ' tmux_attach
 }
 
 # Load Fuzzy Finder
