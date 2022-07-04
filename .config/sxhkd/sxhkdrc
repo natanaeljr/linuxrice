@@ -72,3 +72,11 @@ alt + k
   pactl set-default-sink alsa_output.usb-Logi_USB_Headset_Logi_USB_Headset-00.analog-stereo
 alt + l
   pactl set-default-sink bluez_output.2C_FD_B3_4C_0F_13.a2dp-sink
+
+# Media control
+XF86AudioPlay
+  playerctl -a play-pause
+XF86AudioNext
+  playerctl -a next
+XF86AudioPrev
+  playerctl -a previous
