@@ -46,6 +46,7 @@ function tmux_attach() {
   [ -z $session ] && return
   BUFFER=""
   LBUFFER="tmux attach -t ${session}${LBUFFER}"
+  zle accept-line
 }
 
 # Make tmux_attach as widget
