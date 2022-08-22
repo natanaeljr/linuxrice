@@ -288,8 +288,10 @@ nmap <leader>rn <Plug>(coc-rename)
 xmap <leader>;  <Plug>(coc-format-selected)
 nmap <leader>;  <Plug>(coc-format)
 
-" Outline
-nnoremap <silent> <leader>o  :<C-u>CocList -A outline<cr>
+" Outline search
+nnoremap <silent> <leader>os  :<C-u>CocList -A outline<cr>
+" Open outline window
+nnoremap <silent> <leader>ow <Cmd>CocOutline<CR>
 
 " Workspace Symbols
 nnoremap <silent> <leader>s  :<C-u>CocList -A -I symbols<cr>
