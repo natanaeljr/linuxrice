@@ -2,3 +2,7 @@
 
 # status bar
 dwmblocks &
+
+# workspace
+~/ipi/bin/tmux-launch-ws
+
