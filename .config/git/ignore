@@ -11,3 +11,4 @@ cscope.out
 **/cmake-build-debug/
 .cache
 __pycache__
+.vim
