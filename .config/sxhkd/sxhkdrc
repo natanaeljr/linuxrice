@@ -57,13 +57,13 @@ XF86AudioMute
 
 # Monitor Backlight Control
 XF86MonBrightnessUp
-  ddcutil setvcp 10 - 5 && (ddcutil getvcp 10 | grep -oP "current value =\s+\K\d+" | xargs -L1 notify-send.py --replaces-process backlight -t 1000 -u low Backlight)
-F1
-  ddcutil setvcp 10 - 5 && (ddcutil getvcp 10 | grep -oP "current value =\s+\K\d+" | xargs -L1 notify-send.py --replaces-process backlight -t 1000 -u low Backlight)
+  backlight - 5
 XF86MonBrightnessDown
-  ddcutil setvcp 10 + 5 && (ddcutil getvcp 10 | grep -oP "current value =\s+\K\d+" | xargs -L1 notify-send.py --replaces-process backlight -t 1000 -u low Backlight)
-F2
-  ddcutil setvcp 10 + 5 && (ddcutil getvcp 10 | grep -oP "current value =\s+\K\d+" | xargs -L1 notify-send.py --replaces-process backlight -t 1000 -u low Backlight)
+  backlight + 5
+alt + F1
+  backlight - 5
+alt + F2
+  backlight + 5
 
 # Audio default sink
 alt + j
