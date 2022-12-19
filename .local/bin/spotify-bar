@@ -7,6 +7,9 @@ readonly cache=/tmp/spotify-bar-cache
 readonly updating=/tmp/spotify-bar-updating
 readonly format="%t - %a"
 
+echo "spotify"
+return 0
+
 status="$(cut -b-$maxlen $cache)"
 length="$(wc -c $cache)"
 length=${length% *}

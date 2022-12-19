@@ -26,3 +26,5 @@ text/x-c=editor.desktop
 text/x-c++=editor.desktop
 application/x-shellscript=editor.desktop
 x-scheme-handler/msteams=teams.desktop
+x-scheme-handler/jetbrains=jetbrains-toolbox.desktop
+x-scheme-handler/fleet=jetbrains-fleet.desktop
