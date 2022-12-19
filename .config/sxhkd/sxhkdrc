@@ -64,6 +64,8 @@ alt + F1
   backlight - 5
 alt + F2
   backlight + 5
+alt + shift + b
+  zenity --scale --text=Backlight --step=5 --value=$(backlight) | xargs backlight
 
 # Audio default sink
 alt + j
