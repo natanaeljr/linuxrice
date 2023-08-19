@@ -1,4 +1,4 @@
-**/[Bb]uild/
+**/[Bb]uild*/
 .vscode
 .ccls-cache
 compile_commands.json
