@@ -42,5 +42,6 @@
   //},
   "yank": {
     "highlight": { "duration": 160 }
-  }
+  },
+  "git.enableGutters": true
 }

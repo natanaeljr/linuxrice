@@ -31,6 +31,7 @@ Plug 'kyazdani42/nvim-web-devicons'                 " File Type Icons
 Plug 'romgrk/barbar.nvim'                           " Tabline plugin
 Plug 'preservim/nerdcommenter'                      " Comment functions plugin
 Plug 'tpope/vim-fugitive'                           " Git wrapper
+Plug 'lukas-reineke/indent-blankline.nvim'          " Indent guides
 call plug#end()
 
 " coc.nvim global extensions
@@ -80,10 +81,14 @@ set scrolloff=1             " Show at least one line above/below the cursor
 set sidescrolloff=1         " Show at least one line left/right of the cursor
 set list                    " Make whitespace characters visible
 set listchars=tab:»·,trail:• " Strings to use for showing whitespace characters
+"let g:indent_blankline_char_list = ['│', '|', '¦', '┆', '┊']
 
 " Restore cursor postion on file reopen
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Search
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Search for selected text, forwards or backwards.
 vnoremap <silent> * :<C-U>
   \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
@@ -298,6 +303,9 @@ nnoremap <silent> <leader>s  :<C-u>CocList -A -I symbols<cr>
 
 " Diagnostics Toogle
 nmap <Leader>td <Cmd>call CocAction('diagnosticToggle')<CR>
+
+" 
+nmap <silent> <Leader>th :CocCommand clangd.inlayHints.toggle<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Fuzzy Finder
