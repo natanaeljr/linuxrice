@@ -95,7 +95,7 @@ After installed, on first boot:
 
 - Install DEV packages:
   ```
-  sudo pacman -S --needed gcc gdb clang rustup neovim python-neovim ccls
+  sudo pacman -S --needed gcc gdb clang rustup ccls neovim python-neovim npm nodejs
   yay -S --needed visual-studio-code-bin clion
   ```
 
