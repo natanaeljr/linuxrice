@@ -5,7 +5,7 @@
 
 xrandr-restore                            # restore monitors setup with xrandr
 hsetroot -solid black                     # set the background solid
-setbg -r                                  # restore the background
+setbg #-r                                  # restore the background
 (sleep 3; setxkbmap us altgr-intl) &      # keyboard layout
 (sleep 3; xset r rate 220 38) &           # speed up key repeat rate
 xrdb ${XDG_CONFIG_HOME:-$HOME/.config}/x11/xresources &

@@ -5,7 +5,7 @@
 # Based on Luke Smith's profile file.
 
 # Adds `~/.local/bin` to $PATH
-export PATH="$PATH:${$(find ~/.local/bin -type d -printf %p:)%%:}"
+export PATH="$PATH:/home/$(whoami)/.local/bin"
 
 # Default programs:
 export EDITOR="vim"
