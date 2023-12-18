@@ -121,6 +121,8 @@ nnoremap <silent> <leader><Esc> :nohlsearch<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Semantic Highlight
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" water-green: #54ccb8
+" water-github: #6cb6ff
 " vim-lsp-cxx-highlight
 let g:lsp_cxx_hl_use_text_props = 1
 highlight LspCxxHlSymType guifg=#54ccb8
@@ -245,6 +247,7 @@ nmap ]c <Plug>(coc-git-nextconflict)
 nmap gs <Plug>(coc-git-chunkinfo)
 nmap <silent> gu :CocCommand git.chunkUndo<CR>
 nmap <silent> ga :CocCommand git.chunkStage<CR>
+nmap <silent> gz :CocCommand git.chunkUnstage<CR>
 " Show commit contains current position
 nmap gc <Plug>(coc-git-commit)
 " Create text object for git chunks
