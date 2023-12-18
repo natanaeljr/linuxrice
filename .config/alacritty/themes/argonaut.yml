@@ -1,7 +1,8 @@
 colors:
   # Default colors
   primary:
-    background: '#1b1e24'
+    #background: '#1b1e24'
+    background: '#181a2e'
     foreground: '#EBEBEB'
 
   # Cursor colors
