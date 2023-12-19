@@ -65,6 +65,8 @@ set expandtab       " Use spaces instead of tabs
 set splitbelow      " Horizontal split open below
 set splitright      " Vertical split to the right
 
+set statusline=%<%f\ \ \ [function\:%{get(b:,'coc_current_function','')}]\ \ \ %h%m%r%=%-14.(%l,%c%V%)\ %P
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Editing
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -307,7 +309,7 @@ nnoremap <silent> <leader>s  :<C-u>CocList -A -I symbols<cr>
 " Diagnostics Toogle
 nmap <Leader>td <Cmd>call CocAction('diagnosticToggle')<CR>
 
-" 
+" Toogle clangd hints
 nmap <silent> <Leader>th :CocCommand clangd.inlayHints.toggle<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
