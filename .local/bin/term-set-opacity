@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# term-set-opacity +0.01
+
+set -e
+
+if [[ -z "$1" ]]; then
+  grep 'opacity' ~/.config/alacritty/alacritty.toml | cut -d= -f2 | xargs
+else
+  perl -p -i.bak -e "s{opacity = ([0-9].?[0-9]*)}{'opacity = '.(\$1 $1)}eg" ~/.config/alacritty/alacritty.toml
+  grep 'opacity' ~/.config/alacritty/alacritty.toml | cut -d= -f2 | xargs -L1 notify-send.py --replaces-process term-opacity -t 2000 -u low "Terminal opacity"
+fi
