@@ -1,0 +1,63 @@
+import = ["/home/njr/.config/alacritty/themes/argonaut.toml"]
+
+[colors]
+draw_bold_text_with_bright_colors = false
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 12.5
+
+[font.bold]
+family = "Share Tech Mono"
+style = "Bold"
+
+[font.bold_italic]
+family = "Share Tech Mono"
+style = "Bold Italic"
+
+[font.italic]
+family = "Share Tech Mono"
+style = "Italic"
+
+[font.normal]
+family = "Share Tech Mono"
+style = "Regular"
+
+[[keyboard.bindings]]
+action = "First"
+key = 0
+mode = "Vi|~Search"
+
+[[keyboard.bindings]]
+action = "Last"
+key = 5
+mode = "Vi|~Search"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "FirstOccupied"
+key = 7
+mode = "Vi|~Search"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "Bracket"
+key = 6
+mode = "Vi|~Search"
+mods = "Shift"
+
+[scrolling]
+history = 100000
+
+[window]
+opacity = 0.9
+
+[window.dimensions]
+columns = 110
+lines = 31
+
+[window.padding]
+x = 2
+y = 2
