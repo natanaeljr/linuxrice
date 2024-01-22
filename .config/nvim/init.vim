@@ -32,6 +32,7 @@ Plug 'romgrk/barbar.nvim'                           " Tabline plugin
 Plug 'preservim/nerdcommenter'                      " Comment functions plugin
 Plug 'tpope/vim-fugitive'                           " Git wrapper
 Plug 'lukas-reineke/indent-blankline.nvim'          " Indent guides
+Plug 'rust-lang/rust.vim'                           " Rust plugin
 call plug#end()
 
 " coc.nvim global extensions
@@ -144,17 +145,20 @@ highlight CocSemGlobalScopeVariable guifg=#89b6ff
 highlight CocSemParameter guifg=#c3c5c9
 highlight CocSemProperty guifg=#e6e8ed
 highlight CocSemClass guifg=#54ccb8
+highlight CocSemStruct guifg=#54ccb8
 highlight CocSemInterface guifg=#54ccb8
-highlight CocSemEnum guifg=#54ccb8
+highlight CocSemEnum guifg=#54cca8
 highlight CocSemEnumMember guifg=#d19a66
 highlight CocSemType guifg=#54ccb8
-highlight CocSemNamespace guifg=#c3c5c9
+highlight CocSemTypeAlias guifg=#54ccb8
 highlight CocSemTypeParameter guifg=#54ccb8
+highlight CocSemBuiltinType guifg=#d3869b
+highlight CocSemNamespace guifg=#c3c5c9
 highlight CocSemConcept guifg=#54ccb8
 highlight CocSemMacro guifg=#d19a66
 "highlight CocSemFunction
 "highlight CocSemMethod
-"highlight CocSemComment
+highlight CocSemComment guifg=#928374
 highlight CocSemUnknown guifg=#7F8490
 
 nmap <silent> ghi :CocCommand semanticTokens.inspect<CR>
