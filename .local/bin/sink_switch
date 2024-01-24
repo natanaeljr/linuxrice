@@ -1,0 +1,5 @@
+#!/bin/sh
+
+SINK=$(pactl list sinks short | awk '{print $2}' | zenity --list --text "Select sink" --column sink --hide-header --width=800 --height=250)
+
+pactl set-default-sink $SINK

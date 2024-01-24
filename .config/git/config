@@ -30,3 +30,6 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[user]
+	email = natanael.rabello@outlook.com
+	name = Natanael Rabello

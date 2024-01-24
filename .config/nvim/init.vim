@@ -41,7 +41,6 @@ let g:coc_global_extensions = [
   \'coc-marketplace',
   \'coc-json',
   \'coc-git',
-  \'coc-ccls',
   \'coc-clangd',
   \'coc-xml',
   \'coc-fzf-preview',
