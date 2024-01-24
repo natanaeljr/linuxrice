@@ -1,8 +1,19 @@
-#!/bin/sh
+#!/bin/zsh
 set -eo pipefail
 
+get_backlight_percent() {
+  value=$((`brightnessctl -d intel_backlight get`*1.0/`brightnessctl -d intel_backlight info | grep 'Max brightness' | cut -d: -f2`*100))
+  int=${value%.*}
+  echo $int
+}
+
 if [ -z $1 ]; then
-  ddcutil getvcp 10 --bus 6 | grep -oP "current value =\s+\K\d+"
+  #ddcutil getvcp 10 --bus 6 | grep -oP "current value =\s+\K\d+"
+  #brightnessctl -d intel_backlight g
+  get_backlight_percent
 else
-  ddcutil setvcp 10 --bus 6 $@ && (ddcutil getvcp 10 --bus 6 | grep -oP "current value =\s+\K\d+" | tee /dev/stderr | xargs -L1 notify-send.py --replaces-process backlight -t 2000 -u low Backlight)
+  #ddcutil setvcp 10 --bus 6 $@ && (ddcutil getvcp 10 --bus 6 | grep -oP "current value =\s+\K\d+" | tee /dev/stderr | xargs -L1 notify-send.py --replaces-process backlight -t 2000 -u low Backlight)
+  brightnessctl -d intel_backlight set "$1%" && (get_backlight_percent | xargs -L1 notify-send.py --replaces-process backlight -t 2000 -u low Backlight)
 fi
+
+

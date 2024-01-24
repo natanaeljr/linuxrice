@@ -19,22 +19,28 @@ After installed, on first boot:
 - Install pre-requisite packages:
   ```
   sudo pacman -S --needed alacritty gvim yay ranger rofi dmenu picom sxhkd gnome-keyring xdg-utils wmname unzip xclip
+  ```
+  ```
   yay -S --needed google-chrome
   ```
 
 - Install additional packages:
   ```
   sudo pacman -S --needed xfce4-power-manager xfce4-screensaver xfce4-notifyd notification-daemon feh \
-   mesa-demos manjaro-settings-manager pamac tree network-manager-applet htop bpytop yad \
-   nemo gnome-calculator dbus-python xcursor-breeze xsetroot hsetroot tmux xsel unclutter bat
-  yay -S --needed lf redshift-qt kdocker deadd-notification-center-bin tmux-bash-completion-git
-  pip install notify-send.py
+   mesa-demos manjaro-settings-manager pamac tree network-manager-applet htop btop bpytop yad \
+   nemo gnome-calculator dbus-python xcursor-breeze xorg-xsetroot hsetroot tmux xsel unclutter bat \
+   python-pip zenity onboard
+  ```
+  ```
+  yay -S --needed --noconfirm lf redshift-qt kdocker deadd-notification-center-bin tmux-bash-completion-git notify-send-pyt
   ```
 
 - Install font packages:
   ```
-  sudo pacman -S --needed noto-fonts ttf-jetbrains-mono nerd-fonts-noto-sans-mono ttf-fira-code
-  yay -S --needed ttf-google-sans
+  sudo pacman -S --needed noto-fonts ttf-jetbrains-mono ttf-fira-code
+  ```
+  ```
+  yay -S --needed --noconfirm ttf-google-sans nerd-fonts-noto-sans-mono-extended
   ```
 
 - Automatic start of the X server on tty1: add the following to ~/.zprofile: (# already setup in the dotfiles)
@@ -55,6 +61,12 @@ After installed, on first boot:
   ```
 
 - Change GRUB Timeout: `sudo vim /etc/default/grub; edit GRUB_TIMEOUT=1; sudo update-grub`
+
+- Enable Time Synchronization and fix for dual-booting with Windows:
+  ```
+  timedatectl set-local-rtc 1 --adjust-system-clock
+  timedatectl set-ntp 1
+  ```
 
 - Install audio packages:
   Pulseaudio:
@@ -83,20 +95,28 @@ After installed, on first boot:
 
 - Install more customization packages:
   ```
-  sudo pacman -S --needed oh-my-zsh zsh-theme-powerlevel10k zsh-autosuggestions fzf
-  yay -S --needed zsh-fast-syntax-highlighting zsh-vi-mode
+  sudo pacman -S --needed zsh-theme-powerlevel10k zsh-autosuggestions fzf
+  ```
+  ```
+  yay -S --needed --noconfirm oh-my-zsh-git zsh-fast-syntax-highlighting zsh-vi-mode
+  ```
+  ```
   sudo git clone https://github.com/urbainvaes/fzf-marks.git /opt/fzf-marks
   ```
 
 - Update tuxedo-control-center due to max cpu [issue](https://github.com/tuxedocomputers/tuxedo-control-center/issues/109)
-  `yay -S --needed aur/tuxedo-control-center-bin`
+  ```
+  yay -S --needed --noconfirm aur/tuxedo-control-center-bin
+  ```
 
 #### For Development
 
 - Install DEV packages:
   ```
   sudo pacman -S --needed gcc gdb clang rustup ccls neovim python-neovim npm nodejs
-  yay -S --needed visual-studio-code-bin clion
+  ```
+  yay -S --needed --noconfirm visual-studio-code-bin
+  ```
   ```
 
 - For clion we need to download JDK 11 (new versions did not work because of Java AWT support)
@@ -119,6 +139,16 @@ After installed, on first boot:
   - resolve the VPN DNS correctly run: $ sudo systemctl enable systemd-resolve 
   - add certificate: https://wiki.archlinux.org/index.php/User:Grawity/Adding_a_trusted_CA_certificate
 
+#### Touchpad support
+  - Install driver (only if native driver not already installed): `sudo pacman --needed -S xf86-input-synaptics`
+  - Install tool: `sudo pacman --needed -S xorg-xinput`
+  - Use `xinput list-props` to list and set touchpad properties.
+  - See: https://wiki.archlinux.org/title/Touchpad\_Synaptics
+
+#### Embedded monitor backlight control
+  Just install: `sudo pacman --needed -S brightnessctl`
+  Use cli `brightnessctl --list`
+
 #### External monitor backlight control
   ref: https://wiki.archlinux.org/title/backlight section "External monitors"
   - `sudo pacman -S ddcutil`
@@ -133,6 +163,16 @@ After installed, on first boot:
   - `echo 'KERNEL=="i2c-[0-9]*", GROUP="i2c"' >> /etc/udev/rules.d/10-local_i2c_group.rules`
   Control:
   - `ddcutil setvcp 10 + 5 && ddcutil getvcp 10`
+
+#### Fix laptop screen locker with xfce4
+  - Error: None of the screen lock tools ran successfully, the screen will not be locked.
+  - Fix: `xfconf-query -c xfce4-session -p /general/LockCommand -s "xfce4-screensaver-command --lock"`
+  - Check: `xfconf-query -c xfce4-session -p /general/LockCommand`
+
+#### Custom time to sleep on inactivity with xfce4
+  - xfce4-power-manager allows time start from 15 minutes.
+  - Run this to set 5 minutes: `xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/inactivity-on-battery -s 5`
+  - Check with `xfconf-query -c xfce4-power-manager -lv`
   
 #### Aditional software list:
   * spotifyd (enable user service)

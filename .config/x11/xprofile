@@ -19,6 +19,15 @@ xfce4-power-manager &                     # power manager
 xfce4-screensaver &                       # screensaver and locker
 blueman-applet &                          # bluetooth manager applet
 /usr/lib/notification-daemon-1.0/notification-daemon &
-#deadd-notification-center&                # notification daemon
-#notification-center-systray &             # notification indicator on systray
+##deadd-notification-center&                # notification daemon
+##notification-center-systray &             # notification indicator on systray
 notification-monitor &                    # notification logger to /tmp/notifications.log
+restarter onboard &                       # on-screen keyboard
+
+
+# Touchpad settings
+ID=$(get_touchpad_devid)
+PROP1=$(xinput list-props 9 | grep -m1 'Tapping Enabled' | cut -d: -f1 | grep -oE '([[:digit:]]+)')
+PROP2=$(xinput list-props 9 | grep -m1 'Natural Scrolling Enabled' | cut -d: -f1 | grep -oE '([[:digit:]]+)')
+xinput set-prop $ID $PROP1 1
+xinput set-prop $ID $PROP2 1
