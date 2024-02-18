@@ -31,8 +31,9 @@ Plug 'kyazdani42/nvim-web-devicons'                 " File Type Icons
 Plug 'romgrk/barbar.nvim'                           " Tabline plugin
 Plug 'preservim/nerdcommenter'                      " Comment functions plugin
 Plug 'tpope/vim-fugitive'                           " Git wrapper
-Plug 'lukas-reineke/indent-blankline.nvim'          " Indent guides
+Plug 'lukas-reineke/indent-blankline.nvim', {'branch': 'v2.20.8'} " Indent guides
 Plug 'rust-lang/rust.vim'                           " Rust plugin
+Plug 'dart-lang/dart-vim-plugin'                    " Dart plugin
 call plug#end()
 
 " coc.nvim global extensions
@@ -49,7 +50,8 @@ let g:coc_global_extensions = [
   \'coc-rust-analyzer',
   \'coc-lists',
   \'coc-yank',
-  \'coc-cmake'
+  \'coc-cmake',
+  \'coc-flutter-tools'
   \]
 " fix coc-ccls: https://github.com/neoclide/coc.nvim/issues/2088
 
@@ -84,7 +86,7 @@ set scrolloff=1             " Show at least one line above/below the cursor
 set sidescrolloff=1         " Show at least one line left/right of the cursor
 set list                    " Make whitespace characters visible
 set listchars=tab:»·,trail:• " Strings to use for showing whitespace characters
-"let g:indent_blankline_char_list = ['│', '|', '¦', '┆', '┊']
+let g:indent_blankline_char_list = ['│', '|', '¦', '┆', '┊']
 
 " Restore cursor postion on file reopen
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
@@ -301,6 +303,17 @@ nmap <leader>rn <Plug>(coc-rename)
 " Formatting selected code.
 xmap <leader>;  <Plug>(coc-format-selected)
 nmap <leader>;  <Plug>(coc-format)
+"
+" Applying code actions to the selected code block
+xmap <leader>av  <Plug>(coc-codeaction-selected)
+nmap <leader>av  <Plug>(coc-codeaction-selected)
+
+" Remap keys for applying code actions at the cursor position
+nmap <leader>ac  <Plug>(coc-codeaction-cursor)
+" Remap keys for apply code actions affect whole buffer
+nmap <leader>as  <Plug>(coc-codeaction-source)
+" Apply the most preferred quickfix action to fix diagnostic on the current line
+nmap <leader>qf  <Plug>(coc-fix-current)
 
 " Outline search
 nnoremap <silent> <leader>os  :<C-u>CocList -A outline<cr>
