@@ -31,7 +31,9 @@ Plug 'kyazdani42/nvim-web-devicons'                 " File Type Icons
 Plug 'romgrk/barbar.nvim'                           " Tabline plugin
 Plug 'preservim/nerdcommenter'                      " Comment functions plugin
 Plug 'tpope/vim-fugitive'                           " Git wrapper
-Plug 'lukas-reineke/indent-blankline.nvim'          " Indent guides
+Plug 'lukas-reineke/indent-blankline.nvim', {'branch': 'v2.20.8'} " Indent guides
+Plug 'rust-lang/rust.vim'                           " Rust plugin
+Plug 'dart-lang/dart-vim-plugin'                    " Dart plugin
 call plug#end()
 
 " coc.nvim global extensions
@@ -47,7 +49,8 @@ let g:coc_global_extensions = [
   \'coc-rust-analyzer',
   \'coc-lists',
   \'coc-yank',
-  \'coc-cmake'
+  \'coc-cmake',
+  \'coc-flutter-tools'
   \]
 " fix coc-ccls: https://github.com/neoclide/coc.nvim/issues/2088
 
@@ -82,7 +85,7 @@ set scrolloff=1             " Show at least one line above/below the cursor
 set sidescrolloff=1         " Show at least one line left/right of the cursor
 set list                    " Make whitespace characters visible
 set listchars=tab:»·,trail:• " Strings to use for showing whitespace characters
-"let g:indent_blankline_char_list = ['│', '|', '¦', '┆', '┊']
+let g:indent_blankline_char_list = ['│', '|', '¦', '┆', '┊']
 
 " Restore cursor postion on file reopen
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
@@ -143,17 +146,20 @@ highlight CocSemGlobalScopeVariable guifg=#89b6ff
 highlight CocSemParameter guifg=#c3c5c9
 highlight CocSemProperty guifg=#e6e8ed
 highlight CocSemClass guifg=#54ccb8
+highlight CocSemStruct guifg=#54ccb8
 highlight CocSemInterface guifg=#54ccb8
-highlight CocSemEnum guifg=#54ccb8
+highlight CocSemEnum guifg=#54cca8
 highlight CocSemEnumMember guifg=#d19a66
 highlight CocSemType guifg=#54ccb8
-highlight CocSemNamespace guifg=#c3c5c9
+highlight CocSemTypeAlias guifg=#54ccb8
 highlight CocSemTypeParameter guifg=#54ccb8
+highlight CocSemBuiltinType guifg=#d3869b
+highlight CocSemNamespace guifg=#c3c5c9
 highlight CocSemConcept guifg=#54ccb8
 highlight CocSemMacro guifg=#d19a66
 "highlight CocSemFunction
 "highlight CocSemMethod
-"highlight CocSemComment
+highlight CocSemComment guifg=#928374
 highlight CocSemUnknown guifg=#7F8490
 
 nmap <silent> ghi :CocCommand semanticTokens.inspect<CR>
@@ -264,6 +270,9 @@ nmap <silent> ghf :Ghdiffsplit<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " LSP
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Use <c-space> to trigger completion
+inoremap <silent><expr> <c-space> coc#refresh()
+
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
 nmap <silent> [d <Plug>(coc-diagnostic-prev)
 nmap <silent> ]d <Plug>(coc-diagnostic-next)
@@ -296,6 +305,17 @@ nmap <leader>rn <Plug>(coc-rename)
 " Formatting selected code.
 xmap <leader>;  <Plug>(coc-format-selected)
 nmap <leader>;  <Plug>(coc-format)
+"
+" Applying code actions to the selected code block
+xmap <leader>av  <Plug>(coc-codeaction-selected)
+nmap <leader>av  <Plug>(coc-codeaction-selected)
+
+" Remap keys for applying code actions at the cursor position
+nmap <leader>ac  <Plug>(coc-codeaction-cursor)
+" Remap keys for apply code actions affect whole buffer
+nmap <leader>as  <Plug>(coc-codeaction-source)
+" Apply the most preferred quickfix action to fix diagnostic on the current line
+nmap <leader>af  <Plug>(coc-fix-current)
 
 " Outline search
 nnoremap <silent> <leader>os  :<C-u>CocList -A outline<cr>
