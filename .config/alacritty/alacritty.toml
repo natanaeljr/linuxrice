@@ -7,22 +7,25 @@ draw_bold_text_with_bright_colors = false
 TERM = "xterm-256color"
 
 [font]
-size = 12.0
+size = 10.0
+
+[font.offset]
+y = 4  # line height
 
 [font.bold]
-family = "Share Tech Mono"
+family = "JetBrains Mono"
 style = "Bold"
 
 [font.bold_italic]
-family = "Share Tech Mono"
+family = "JetBrains Mono"
 style = "Bold Italic"
 
 [font.italic]
-family = "Share Tech Mono"
+family = "JetBrains Mono"
 style = "Italic"
 
 [font.normal]
-family = "Share Tech Mono"
+family = "JetBrains Mono"
 style = "Regular"
 
 [[keyboard.bindings]]
@@ -52,7 +55,7 @@ mods = "Shift"
 history = 100000
 
 [window]
-opacity = 0.9
+opacity = 0.85
 
 [window.dimensions]
 columns = 110
