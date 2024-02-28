@@ -26,7 +26,7 @@ orient_3	parenright
 orient_1	parenleft
 flip		underscore
 mirror		bar
-delete		Delete
+delete		S-Delete
 zoom_fit	s
 zoom_default	a
 
