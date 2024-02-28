@@ -83,6 +83,13 @@ XF86AudioNext
 XF86AudioPrev
   playerctl -a previous
 
+alt + p
+  playerctl -a play-pause
+alt + bracketright
+  playerctl -a next
+alt + bracketleft
+  playerctl -a previous
+
 # Terminal opacity
 alt + shift + minus
   term-set-opacity -0.01
