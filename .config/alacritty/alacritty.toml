@@ -7,25 +7,26 @@ draw_bold_text_with_bright_colors = false
 TERM = "xterm-256color"
 
 [font]
-size = 10.0
+size = 10.5
 
 [font.offset]
-y = 4  # line height
+y = 5 # line height
+x = 0 # letter spacing
 
 [font.bold]
-family = "JetBrains Mono"
+family = "Cascadia Code"
 style = "Bold"
 
 [font.bold_italic]
-family = "JetBrains Mono"
+family = "Cascadia Code"
 style = "Bold Italic"
 
 [font.italic]
-family = "JetBrains Mono"
+family = "Cascadia Code"
 style = "Italic"
 
 [font.normal]
-family = "JetBrains Mono"
+family = "Cascadia Code"
 style = "Regular"
 
 [[keyboard.bindings]]
@@ -55,11 +56,11 @@ mods = "Shift"
 history = 100000
 
 [window]
-opacity = 0.85
+opacity = 0.96
 
 [window.dimensions]
-columns = 110
-lines = 31
+columns = 110 #110
+lines = 24 #31
 
 [window.padding]
 x = 2
