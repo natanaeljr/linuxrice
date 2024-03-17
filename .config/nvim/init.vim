@@ -116,6 +116,7 @@ set wildoptions=pum         " List completion options in a popupmenu
 " Highlighting & Theme
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 syntax on
+let g:sonokai_transparent_background = 1
 colorscheme sonokai
 set background=dark
 set termguicolors
