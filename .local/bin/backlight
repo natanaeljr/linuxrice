@@ -5,4 +5,5 @@ if [ -z $1 ]; then
   ddcutil getvcp 10 --bus 6 | grep -oP "current value =\s+\K\d+"
 else
   ddcutil setvcp 10 --bus 6 $@ && (ddcutil getvcp 10 --bus 6 | grep -oP "current value =\s+\K\d+" | tee /dev/stderr | xargs -L1 notify-send.py --replaces-process backlight -t 2000 -u low Backlight)
+  ddcutil setvcp 10 --bus 5 $@
 fi
