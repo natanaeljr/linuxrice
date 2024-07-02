@@ -56,11 +56,11 @@ mods = "Shift"
 history = 100000
 
 [window]
-opacity = 0.96
+opacity = 0.93
 
 [window.dimensions]
-columns = 110 #110
-lines = 24 #31
+columns = 128 #110
+lines = 30 #31
 
 [window.padding]
 x = 2
