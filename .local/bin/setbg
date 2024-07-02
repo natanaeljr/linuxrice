@@ -1,10 +1,10 @@
 #!/bin/sh
 
 if [ "$1" = "-r" ]; then
-  random-bg
+  random-bg -2
 elif [ -f ~/.fehbg ]; then
   ~/.fehbg
 else
-  random-bg
+  random-bg -2
 fi
 
