@@ -72,9 +72,10 @@ set guicursor+=a:blinkon0   " Disable cursor blinking
 else
 
 " Terminal scheme "
-colorscheme gruvbox
+colorscheme sonokai
 set background=dark
-hi Normal ctermbg=NONE guibg=NONE      " Remove background color
+hi Normal ctermbg=NONE guibg=NONE           " Remove background color
+hi EndOfBuffer ctermbg=NONE guibg=NONE      " Remove background color
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
