@@ -121,7 +121,8 @@ let g:sonokai_transparent_background = 1
 colorscheme sonokai
 set background=dark
 set termguicolors
-hi Normal ctermbg=NONE guibg=NONE      " Remove background color
+hi Normal ctermbg=NONE guibg=NONE           " Remove background color
+hi EndOfBuffer ctermbg=NONE guibg=NONE      " Remove background color
 nnoremap <silent> <leader><Esc> :nohlsearch<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
