@@ -118,11 +118,11 @@ set wildoptions=pum         " List completion options in a popupmenu
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 syntax on
 let g:sonokai_transparent_background = 1
-colorscheme sonokai
+colorscheme gruvbox
 set background=dark
 set termguicolors
-hi Normal ctermbg=NONE guibg=NONE           " Remove background color
-hi EndOfBuffer ctermbg=NONE guibg=NONE      " Remove background color
+"hi Normal ctermbg=NONE guibg=NONE           " Remove background color
+"hi EndOfBuffer ctermbg=NONE guibg=NONE      " Remove background color
 nnoremap <silent> <leader><Esc> :nohlsearch<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -143,27 +143,31 @@ highlight LspCxxHlSymNamespace guifg=#c3c5c9
 
 " coc-semantic-highlights
 let g:coc_default_semantic_highlight_groups=0
-highlight CocSemVariable guifg=#c3c5c9
-highlight CocSemFileScopeVariable guifg=#89b6ff
-highlight CocSemGlobalScopeVariable guifg=#89b6ff
-highlight CocSemParameter guifg=#c3c5c9
-highlight CocSemProperty guifg=#e6e8ed
-highlight CocSemClass guifg=#54ccb8
-highlight CocSemStruct guifg=#54ccb8
-highlight CocSemInterface guifg=#54ccb8
-highlight CocSemEnum guifg=#54cca8
-highlight CocSemEnumMember guifg=#d19a66
-highlight CocSemType guifg=#54ccb8
-highlight CocSemTypeAlias guifg=#54ccb8
-highlight CocSemTypeParameter guifg=#54ccb8
-highlight CocSemBuiltinType guifg=#d3869b
-highlight CocSemNamespace guifg=#c3c5c9
-highlight CocSemConcept guifg=#54ccb8
-highlight CocSemMacro guifg=#d19a66
-"highlight CocSemFunction
-"highlight CocSemMethod
-highlight CocSemComment guifg=#928374
-highlight CocSemUnknown guifg=#7F8490
+highlight CocSemTypeVariable guifg=#c3c5c9
+highlight CocSemTypeFileScopeVariable guifg=#89b6ff
+highlight CocSemTypeGlobalScopeVariable guifg=#89b6ff
+highlight CocSemTypeParameter guifg=#c3c5c9
+highlight CocSemTypeProperty guifg=#e6e8ed
+highlight CocSemTypeClass guifg=#54ccb8
+highlight CocSemTypeStruct guifg=#54ccb8
+highlight CocSemTypeInterface guifg=#54ccb8
+highlight CocSemTypeEnum guifg=#54cca8
+highlight CocSemTypeEnumMember guifg=#d19a66
+highlight CocSemTypeType guifg=#54ccb8
+highlight CocSemTypeTypeAlias guifg=#54ccb8
+highlight CocSemTypeTypeParameter guifg=#54ccb8
+highlight CocSemTypeBuiltinType guifg=#d3869b
+highlight CocSemTypeNamespace guifg=#c3c5c9
+highlight CocSemTypeConcept guifg=#54ccb8
+highlight CocSemTypeMacro guifg=#d19a66
+"highlight CocSemTypeFunction
+"highlight CocSemTypeMethod
+"highlight CocSemTypeComment guifg=#928374
+"highlight CocSemTypeComment guifg=NONE guibg=NONE gui=strikethrough
+highlight CocSemTypeComment guifg=NONE guibg=#383838 gui=NONE
+highlight CocSemTypeUnknown guifg=#7F8490
+
+highlight CocInlayHintParameter guifg=Grey
 
 nmap <silent> ghi :CocCommand semanticTokens.inspect<CR>
 nmap <silent> ghr :CocCommand semanticTokens.refreshCurrent<CR>
@@ -332,7 +336,7 @@ nnoremap <silent> <leader>s  :<C-u>CocList -A -I symbols<cr>
 nmap <Leader>td <Cmd>call CocAction('diagnosticToggle')<CR>
 
 " Toogle clangd hints
-nmap <silent> <Leader>th :CocCommand clangd.inlayHints.toggle<CR>
+nmap <silent> <Leader>th :CocCommand document.toggleInlayHint<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Fuzzy Finder
