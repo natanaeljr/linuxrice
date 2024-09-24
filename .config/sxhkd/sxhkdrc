@@ -69,7 +69,7 @@ alt + shift + b
 
 # Audio default sink
 alt + j
-  pactl set-default-sink alsa_output.pci-0000_0a_00.4.pro-output-0
+  pactl set-default-sink alsa_output.pci-0000_0a_00.4.analog-stereo
 alt + k
   pactl set-default-sink alsa_output.usb-Logi_USB_Headset_Logi_USB_Headset-00.analog-stereo
 alt + l
