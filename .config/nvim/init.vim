@@ -121,8 +121,8 @@ let g:sonokai_transparent_background = 1
 colorscheme gruvbox
 set background=dark
 set termguicolors
-"hi Normal ctermbg=NONE guibg=NONE           " Remove background color
-"hi EndOfBuffer ctermbg=NONE guibg=NONE      " Remove background color
+hi Normal ctermbg=NONE guibg=NONE           " Remove background color
+hi EndOfBuffer ctermbg=NONE guibg=NONE      " Remove background color
 nnoremap <silent> <leader><Esc> :nohlsearch<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -283,6 +283,8 @@ inoremap <silent><expr> <c-space> coc#refresh()
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
 nmap <silent> [d <Plug>(coc-diagnostic-prev)
 nmap <silent> ]d <Plug>(coc-diagnostic-next)
+nmap <silent> [e <Plug>(coc-diagnostic-prev-error)
+nmap <silent> ]e <Plug>(coc-diagnostic-next-error)
 
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
