@@ -118,7 +118,7 @@ set wildoptions=pum         " List completion options in a popupmenu
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 syntax on
 let g:sonokai_transparent_background = 1
-colorscheme gruvbox
+colorscheme sonokai
 set background=dark
 set termguicolors
 hi Normal ctermbg=NONE guibg=NONE           " Remove background color
@@ -203,8 +203,8 @@ set exrc  " enable loading local .nvimrc
 " Comments
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 filetype plugin on
-nnoremap <silent> <C-_>  :call nerdcommenter#Comment('n', 'toggle')<CR>
-xnoremap <silent> <C-_>  :call nerdcommenter#Comment('x', 'toggle')<CR>
+nnoremap <silent> <C-;>  :call nerdcommenter#Comment('n', 'toggle')<CR>
+xnoremap <silent> <C-;>  :call nerdcommenter#Comment('x', 'toggle')<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " coc-list & coc-yank
