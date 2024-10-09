@@ -7,11 +7,11 @@ draw_bold_text_with_bright_colors = false
 TERM = "xterm-256color"
 
 [font]
-size = 10.5
+size = 11.7
 
 [font.offset]
-y = 5 # line height
-x = 0 # letter spacing
+y = 6 # line height
+x = -1 # letter spacing
 
 [font.bold]
 family = "Cascadia Code"
@@ -56,7 +56,7 @@ mods = "Shift"
 history = 100000
 
 [window]
-opacity = 0.93
+opacity = 0.96
 
 [window.dimensions]
 columns = 128 #110
