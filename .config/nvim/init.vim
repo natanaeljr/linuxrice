@@ -186,6 +186,8 @@ set tags=./tags;
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Session
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Fix for coc-explorer buffer is empty error when session restored
+set sessionoptions-=blank
 function Session()
 if filereadable("Session.vim")
   exec "source Session.vim"
