@@ -15,6 +15,9 @@
     "semanticTokens.enable": true,
     "inlayHint.enableParameter": true,
   },
+  "[dart]": {
+    "semanticTokens.enable": true
+  },
   "dart.lineLength": 100,
   "clangd.enabled": true,
   "clangd.arguments": ["-j=8", "--background-index", "--clang-tidy", "--completion-style=bundled", "--header-insertion=iwyu"],

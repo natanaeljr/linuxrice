@@ -4,7 +4,7 @@ Xft.autohint: 0
 Xft.rgba: rgb
 Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
-Xft.dpi: 152
+Xft.dpi: 192
 URxvt.font: xft:SF Mono:pixelsize=13
 
 Xcursor.theme: xcursor-breeze-snow

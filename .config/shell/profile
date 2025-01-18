@@ -21,10 +21,11 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export GDK_SCALE=2
 export QT_AUTO_SCREEN_SCALE_FACTOR=1
 export QT_ENABLE_HIGHDPI_SCALING=1
-#export QT_FONT_DPI=152
-#export QT_SCALE_FACTOR=2
-#export QT_SCREEN_SCALE_FACTORS=2
-#export WINIT_X11_SCALE_FACTOR=1.5  # manual scaling for alacritty
+
+export QT_FONT_DPI=152
+export QT_SCALE_FACTOR=2
+export QT_SCREEN_SCALE_FACTORS=2
+export WINIT_X11_SCALE_FACTOR=1.5  # manual scaling for alacritty
 
 # Program settings:
 export INPUTRC="${XDG_CONFIG_HOME:-$HOME/.config}/shell/inputrc"
@@ -131,5 +132,5 @@ ex=🎯:\
 
 # Auto-start graphical server on tty1
 if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
-  exec startx
+  exec startx -- -dpi 192
 fi
